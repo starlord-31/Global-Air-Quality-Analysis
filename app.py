@@ -431,4 +431,5 @@ with col2:
 # Footer
 st.markdown("---")
 st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/ML_Project.ipynb)", unsafe_allow_html=True)
+st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
 st.write("© 2024 Yashwanth Reddy Thallapalli")
