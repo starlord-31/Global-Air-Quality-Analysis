@@ -137,7 +137,7 @@ elif main_tab == "Machine Learning":
         In total, the data collected from both the OpenAQ API and BigQuery covers a wide range of geographical locations and time periods, providing a robust basis for air quality analysis from 2007 to 2024.
         """)
         
-        st.image("Images/1.png.png", use_column_width=True, caption="Data retrieved from Google BigQuery")
+        st.image("Images/1.png", use_column_width=True, caption="Data retrieved from Google BigQuery")
 
     elif sub_tab == "Data Prep/EDA":
         st.subheader("Data Prep/EDA")
