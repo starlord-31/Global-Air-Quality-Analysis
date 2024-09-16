@@ -16,7 +16,7 @@ if main_tab == "Home":
     col1, col2 = st.columns([1, 2])  # Image in col1, text in col2
 
     with col1:
-        st.image("20240908_235437.jpg", caption="This is me!")  # Your profile image
+        st.image("Images/20240908_235437.jpg", caption="This is me!")  # Your profile image
 
     with col2:
         st.header("About Me")  # Header is now applied to the text side
@@ -33,7 +33,7 @@ elif main_tab == "Machine Learning":
     st.markdown('<h1 style="text-align: center;">Global Air Quality Analysis</h1>', unsafe_allow_html=True)
     
     # Display the image using st.image() without any additional HTML/CSS
-    st.image("pexels-pixabay-221012.jpg", use_column_width=True)
+    st.image("Images/pexels-pixabay-221012.jpg", use_column_width=True)
 
     # Nested sub-tabs under Machine Learning, also in the sidebar
     with st.sidebar:
