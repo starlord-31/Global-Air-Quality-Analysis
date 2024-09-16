@@ -121,7 +121,7 @@ elif main_tab == "Machine Learning":
         This dataset provided a crucial real-time component to the analysis by offering recent air quality data for London.
         """)
 
-        st.image("2.png", use_column_width=True, caption="Data retrieved from OpenAQ API")
+        st.image("Images/2.png", use_column_width=True, caption="Data retrieved from OpenAQ API")
                  
         st.write("""
         2. **Google BigQuery - OpenAQ Public Dataset**
@@ -137,7 +137,7 @@ elif main_tab == "Machine Learning":
         In total, the data collected from both the OpenAQ API and BigQuery covers a wide range of geographical locations and time periods, providing a robust basis for air quality analysis from 2007 to 2024.
         """)
         
-        st.image("1.png", use_column_width=True, caption="Data retrieved from Google BigQuery")
+        st.image("Images/1.png.png", use_column_width=True, caption="Data retrieved from Google BigQuery")
 
     elif sub_tab == "Data Prep/EDA":
         st.subheader("Data Prep/EDA")
@@ -187,7 +187,7 @@ elif main_tab == "Machine Learning":
         """)
 
         # Combined Dataset Image (Screenshot)
-        st.image("3.png", use_column_width=True, caption="Combined Dataset")
+        st.image("Images/3.png", use_column_width=True, caption="Combined Dataset")
         
         st.subheader("Data Cleaning")
 
@@ -211,14 +211,14 @@ elif main_tab == "Machine Learning":
         - The top 30 locations with the highest number of data points were selected for visualization.
         - A bar plot was created to show these top 30 locations, with the number of data points on the y-axis.
         """)
-        st.image("4.png", use_column_width=True, caption="Top 30 Locations by Number of Data Points")
+        st.image("Images/4.png", use_column_width=True, caption="Top 30 Locations by Number of Data Points")
 
         st.write("""
         - The 'averaged_over_in_hours' column had missing values, which were removed before visualizing.
         - After cleaning, a histogram was plotted to show the distribution of 'averaged_over_in_hours'.
         - The plot provides insight into how often data was averaged over specific periods.
         """)
-        st.image("5.png", use_column_width=True, caption="Distribution of Averaged Over in Hours")
+        st.image("Images/5.png", use_column_width=True, caption="Distribution of Averaged Over in Hours")
 
         st.write("""
         Upon reviewing the column `averaged_over_in_hours`, it was found that the data contained a strange distribution, including negative values. Since these values do not make logical sense in the context of averaging hours, the decision was made to drop the column entirely.
@@ -247,7 +247,7 @@ elif main_tab == "Machine Learning":
         # Data Cleaning: Handling Missing City and Location Values
         st.subheader("Handling Missing City and Location Values")
 
-        st.image("6.png", use_column_width=True, caption="Top 10 Cities by Overall Percentage (Including NaNs)")
+        st.image("Images/6.png", use_column_width=True, caption="Top 10 Cities by Overall Percentage (Including NaNs)")
 
         st.write("""
         After visualizing the top 10 cities, it was found that approximately 1.22% of the data had missing values for the city field (shown as NaN). Since this represents a very small portion of the data (only 1.22%), it was decided to remove these rows to ensure data consistency without losing significant information.
@@ -264,12 +264,12 @@ elif main_tab == "Machine Learning":
         """)
 
         # Displaying the Pie Chart of Country Proportion
-        st.image("7.png", use_column_width=True, caption="Countries by Air Quality Data Proportion (with Others)")
+        st.image("Images/7.png", use_column_width=True, caption="Countries by Air Quality Data Proportion (with Others)")
 
         # Data Cleaning: Outlier Removal and Capping of Pollutant Values
         st.subheader("Data Cleaning: Outlier Removal and Capping of Pollutant Values")
 
-        st.image("8.png", use_column_width=True, caption="Box Plot of Pollutant Values (Before Cleaning)")
+        st.image("Images/8.png", use_column_width=True, caption="Box Plot of Pollutant Values (Before Cleaning)")
 
         st.write("""
         In the dataset, there were several cases of negative values for pollutants, as well as extreme outliers. A multi-step cleaning process was applied to handle these issues:
@@ -298,7 +298,7 @@ elif main_tab == "Machine Learning":
         """)
 
         # Displaying Boxplot for Pollutant Values
-        st.image("9.png", use_column_width=True, caption="Box Plot of Pollutant Values (After Cleaning)")
+        st.image("Images/9.png", use_column_width=True, caption="Box Plot of Pollutant Values (After Cleaning)")
 
         # Data Cleaning: Chinese Locations and Misclassified Rows
         st.subheader("Handling Chinese Locations and Misclassified Rows")
@@ -321,7 +321,7 @@ elif main_tab == "Machine Learning":
         """)
 
         # Visualizations (Example Visualization Placeholder)
-        st.image("10.png", use_column_width=True, caption="Scatter Plot of Locations with Chinese Characters")
+        st.image("Images/10.png", use_column_width=True, caption="Scatter Plot of Locations with Chinese Characters")
 
         # Final Note
         st.write("""
@@ -336,10 +336,10 @@ elif main_tab == "Machine Learning":
 
         Given the large size of the dataset, a random sample (0.1%) of the data was used for the visualization to keep the rendering efficient while still providing meaningful insights.
         """)
-        st.image("11.png", use_column_width=True, caption="Geographical Distribution of Air Quality Data, showing pollutant types across different regions.")
+        st.image("Images/11.png", use_column_width=True, caption="Geographical Distribution of Air Quality Data, showing pollutant types across different regions.")
 
         st.subheader("Correlation Between Pollutants")
-        st.image("12.png", use_column_width=True, caption="Correlation Heatmap of Pollutants")
+        st.image("Images/12.png", use_column_width=True, caption="Correlation Heatmap of Pollutants")
         st.write("""
         The correlation heatmap shown below displays how various pollutants, such as PM10, NO2, CO, and others, correlate with each other based on the average pollutant values. 
         For example, pollutants PM10 and PM25 have a strong positive correlation (0.85), while O3 and CO show almost zero correlation. 
@@ -357,7 +357,7 @@ elif main_tab == "Machine Learning":
         risks, contributing to respiratory issues and environmental challenges like acid rain.
         """)
 
-        st.image("13.png", use_column_width=True, caption="Treemap of Average NO2 Levels by Country")
+        st.image("Images/13.png", use_column_width=True, caption="Treemap of Average NO2 Levels by Country")
 
         st.subheader("Top Countries by Average Pollutant Values")
 
@@ -367,7 +367,7 @@ elif main_tab == "Machine Learning":
         with significant pollutant levels.
         """)
 
-        st.image("14.png", use_column_width=True, caption="Top Countries by Average Pollutant Values")
+        st.image("Images/14.png", use_column_width=True, caption="Top Countries by Average Pollutant Values")
 
         st.write("""
         During the analysis, it was found that the pollutant value 'no' only occurred once in the dataset. Given its insignificance, 
@@ -407,12 +407,12 @@ elif main_tab == "Machine Learning":
         """)
 
         st.write("Uncleaned Dataset:")
-        st.image("3.png", use_column_width=True, caption="Uncleaned Dataset")
+        st.image("Images/3.png", use_column_width=True, caption="Uncleaned Dataset")
 
         # Add a placeholder to display the dataset once it's uploaded or ready
         st.write("Cleaned Dataset:")
 
-        st.image("15.png", use_column_width=True, caption="Cleaned Dataset")
+        st.image("Images/15.png", use_column_width=True, caption="Cleaned Dataset")
 
     elif sub_tab == "Conclusions":
         st.subheader("Conclusions")
