@@ -104,7 +104,7 @@ elif main_tab == "Machine Learning":
 
         1. **OpenAQ API**
 
-        The OpenAQ API was utilized to gather real-time and historical air quality data for the city of London. The data spans from January 2023 to August 2024, and includes key pollutants such as PM2.5, PM10, CO, SO2, NO2, and O3. This API provides a comprehensive dataset with pollutant levels measured at different times of the day.
+        The OpenAQ API was utilized to gather real-time and historical air quality data for the city of London. The data spans from January 2023 to August 2024, and includes key pollutants such as PM2.5, PM10, CO, SO2, NO2, BC, and O3. This API provides a comprehensive dataset with pollutant levels measured at different times of the day.
 
         *Source*: [OpenAQ API](https://explore.openaq.org)
 
