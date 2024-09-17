@@ -58,27 +58,22 @@ elif main_tab == "Machine Learning":
 
         st.subheader("Previous Works on Air Quality Prediction Using Machine Learning")
         st.write("""
-        1. A comprehensive review by Méndez et al. (2023) examined 155 papers on machine learning models for air quality forecasting from 2011-2021. Key findings include:
+        1. [A comprehensive review by Méndez et al. (2023)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9933038/) examined 155 papers on machine learning models for air quality forecasting from 2011-2021. Key findings include:
             - Deep learning models were widely used, especially for predicting pollutant concentrations and air quality indices.
             - Common algorithms included artificial neural networks, decision trees, and support vector machines.
             - Ensemble models combining multiple techniques often outperformed individual models.
 
-        2. Kumar et al. (2022) analyzed 6 years of air pollution data from 23 Indian cities. They:
+        2. [Kumar et al. (2022)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9107909/) analyzed 6 years of air pollution data from 23 Indian cities. They:
             - Used correlation analysis for feature selection.
             - Applied 5 machine learning models to predict air quality index (AQI).
             - Found XGBoost performed best among the models tested.
 
-        3. A systematic review by Bellinger et al. (2017) on data mining and machine learning for air pollution epidemiology found:
+        3. [A systematic review by Bellinger et al. (2017)](https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-017-4914-3) on data mining and machine learning for air pollution epidemiology found:
             - 18 studies using ML techniques for forecasting/prediction.
             - Most focused on predicting pollutant concentrations or AQI.
             - Some innovative data sources like social media were utilized.
 
-        4. Gokulan et al. (2023) developed a deep learning framework to predict AQI in Indian cities, incorporating:
-            - Long short-term memory (LSTM) networks.
-            - Feature selection using metaheuristic algorithms.
-            - Analysis of COVID-19 lockdown impacts on air quality.
-
-        5. Gupta et al. (2023) conducted a comparative analysis of machine learning techniques for AQI prediction, using:
+        4. [Gupta et al. (2023)](https://onlinelibrary.wiley.com/doi/10.1155/2023/4916267) conducted a comparative analysis of machine learning techniques for AQI prediction, using:
             - Support vector regression (SVR) as a widely-used method.
             - Multiple algorithms to quantify pollutant levels and predict AQI.
 
