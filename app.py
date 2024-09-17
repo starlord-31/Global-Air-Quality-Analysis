@@ -88,7 +88,7 @@ elif main_tab == "Machine Learning":
         3. How do meteorological factors such as humidity or wind speed influence air quality levels?
         4. Is there a correlation between population density and higher pollutant levels?
 
-        5. Which cities have the most significant air quality improvements or declines from 2023 to 2024?
+        5. Which cities have the most significant air quality improvements or declines from 2007 to 2022?
         6. How do policies implemented in cities such as London or Delhi affect air quality improvements?
         7. What are the key health impacts linked to air pollution levels in cities with high PM2.5 and PM10?
         8. Is there a correlation between traffic congestion and spikes in NO2 and CO levels in urban areas?
