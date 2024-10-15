@@ -37,19 +37,25 @@ elif main_tab == "Machine Learning":
 
     # Nested sub-tabs under Machine Learning, also in the sidebar
     with st.sidebar:
-        sub_tab = st.selectbox("Choose a topic", ["Introduction", "Data Gathering", "Data Prep/EDA", "Conclusions"])
+        sub_tab = st.selectbox("Choose a topic", ["Introduction", "Data Gathering", "Data Prep/EDA", "PCA", "Clustering", "ARM", "Conclusions"])
 
     if sub_tab == "Introduction":
         st.subheader("Introduction")
         st.write("""
-            The topic of air quality has become increasingly relevant in today’s world. Rapid urbanization and industrialization have contributed significantly to the decline in air quality in many of the world's major cities. Pollutants such as PM2.5, PM10, CO, NO2, and O3 have had a severe impact on human health, contributing to respiratory diseases, cardiovascular issues, and premature deaths.
+            Air quality has become one of the most critical environmental concerns in the modern era, as rapid urbanization and industrialization continue to degrade the atmosphere. Poor air quality has been linked to a wide range of health problems, including respiratory diseases, cardiovascular conditions, and even premature death. This is particularly true for cities with high population densities and significant industrial activity. Pollutants such as particulate matter (PM2.5, PM10), carbon monoxide (CO), nitrogen dioxide (NO2), and ozone (O3) are among the most harmful to human health. Exposure to these pollutants is not only a public health concern but also has significant economic implications, as it leads to increased healthcare costs and reduced worker productivity. In this project, air quality data from various cities around the world are analyzed to identify trends, key pollutants, and factors contributing to pollution levels.
 
         """)
 
         st.write("""
-            This project focuses on analyzing air quality across multiple cities globally, including London, Delhi, and Denver, from 2007 to 2024. By collecting data on key pollutants, we aim to explore the trends in air pollution over time, examine the geographical differences, and investigate the factors contributing to poor air quality. The cities selected for this analysis represent a wide range of geographical locations, economic development stages, and pollution levels, making this a comprehensive study of global air quality.
+            This project focuses on analyzing air quality across multiple cities globally, including major urban centers like London, Delhi, and Denver. These cities were selected for their geographical diversity, economic status, and varying levels of air pollution. By gathering data on major air pollutants between 2007 and 2024, the aim is to explore the temporal and spatial variations in pollution levels. For instance, while cities like London may experience pollution spikes due to traffic emissions, industrial centers like Delhi are more likely to be impacted by coal burning and vehicular exhaust. The analysis will look at pollutants such as PM2.5 and PM10, which are small enough to penetrate deep into the lungs, as well as gases like CO, NO2, and O3, which have known harmful effects on human health. Understanding these differences is crucial for formulating effective policy interventions aimed at reducing pollution levels.
 
         """)
+
+        st.write("""
+            In addition to simply analyzing air quality data, this project also applies advanced machine learning techniques such as Principal Component Analysis (PCA) and various clustering algorithms. PCA will help in reducing the dimensionality of the dataset, allowing for easier interpretation of the underlying factors contributing to air quality variations. Clustering techniques such as KMeans, hierarchical clustering, and DBSCAN will be used to identify natural groupings within the data. These methods will allow for a more detailed analysis of how pollution levels are influenced by geographical factors, economic activity, and seasonal changes. Furthermore, this analysis will offer insights into the relationships between different pollutants, helping to pinpoint which combinations of pollutants are most harmful in specific urban environments. By leveraging these machine learning techniques, the project aims to provide a comprehensive understanding of global air quality trends and contribute to efforts in reducing pollution and improving public health.
+
+        """)
+
 
         st.subheader("Motivation")
         st.write("""
@@ -133,6 +139,8 @@ elif main_tab == "Machine Learning":
         """)
         
         st.image("Images/1.png", use_column_width=True, caption="Data retrieved from Google BigQuery")
+        st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/Introduction_Code.ipynb)", unsafe_allow_html=True)
+        st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
 
     elif sub_tab == "Data Prep/EDA":
         st.subheader("Data Prep/EDA")
@@ -409,6 +417,33 @@ elif main_tab == "Machine Learning":
 
         st.image("Images/15.png", use_column_width=True, caption="Cleaned Dataset")
 
+        st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/Introduction_Code.ipynb)", unsafe_allow_html=True)
+        st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
+
+    elif sub_tab == "PCA":
+        st.subheader("PCA")
+        st.markdown("#### Overview")
+        st.write("Principal Component Analysis (PCA) is a statistical technique that simplifies a dataset by reducing its dimensionality, while still retaining as much of the data’s variance as possible. This reduction is achieved by transforming the data into new, uncorrelated variables called principal components. The first principal component is the direction in which the data varies the most, the second component captures the next highest variance, and so on. Each successive principal component is orthogonal (uncorrelated) to the previous ones.")
+        st.write("PCA works by finding the axes (principal components) that capture the most variance in the data. This process involves creating a covariance matrix, calculating the eigenvalues and eigenvectors, and projecting the original data onto these new axes. The resulting components are ranked by the amount of variance they explain. Typically, the first few components capture most of the variation, allowing for effective dimensionality reduction.")
+        
+        st.markdown("##### The two images below illustrate the concept of PCA:")
+        st.image("Images/PCA1.png", use_column_width=True, caption="PCA Transformation of Data")
+        st.write("The above image shows a 2D dataset before and after PCA transformation. The original data is represented in terms of the x and y axes, and PCA transforms this into new axes (principal components) that maximize the variance in the data.")
+        
+        st.write("""
+                 """)
+
+        st.image("Images/PCA2.png", use_column_width=True, caption="Variance Explained by Principal Components")
+        st.write("The above image depicts the variance explained by each principal component. The eigenvalues are proportional to the variance captured by each component, and the first few components typically capture the majority of the variance. This graph helps in selecting how many components to keep, as it shows how much of the original data’s variance is retained when reducing dimensionality.")
+
+        st.write("In this project, PCA is applied to reduce the dimensionality of the air quality dataset, which contains multiple pollutants such as PM2.5, PM10, NO2, SO2, CO, and O3. By using PCA, the data can be transformed into a smaller number of principal components while still capturing the majority of the variance present in the original dataset. This reduction in dimensionality simplifies the analysis process, making it easier to visualize and interpret patterns in the data. For example, by reducing the data to 2 or 3 principal components, approximately 54-69% of the total variance is retained, allowing for efficient downstream tasks such as clustering and association rule mining while preserving the most significant information about pollutant variability across cities.")
+
+        st.markdown("#### Data Prep and Code")
+
+
+        st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/PCA.ipynb)", unsafe_allow_html=True)
+        st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
+
     elif sub_tab == "Conclusions":
         st.subheader("Conclusions")
         st.write("This section concludes the Machine Learning topics discussed.")
@@ -425,6 +460,4 @@ with col2:
 
 # Footer
 st.markdown("---")
-st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/ML_Project.ipynb)", unsafe_allow_html=True)
-st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
 st.write("© 2024 Yashwanth Reddy Thallapalli")
