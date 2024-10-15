@@ -415,7 +415,6 @@ elif main_tab == "Machine Learning":
         # Add a placeholder to display the dataset once it's uploaded or ready
         st.write("Cleaned Dataset:")
 
-        st.image("Images/15.png", use_column_width=True, caption="Cleaned Dataset")
 
         st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/Introduction_Code.ipynb)", unsafe_allow_html=True)
         st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
@@ -439,10 +438,71 @@ elif main_tab == "Machine Learning":
         st.write("In this project, PCA is applied to reduce the dimensionality of the air quality dataset, which contains multiple pollutants such as PM2.5, PM10, NO2, SO2, CO, and O3. By using PCA, the data can be transformed into a smaller number of principal components while still capturing the majority of the variance present in the original dataset. This reduction in dimensionality simplifies the analysis process, making it easier to visualize and interpret patterns in the data. For example, by reducing the data to 2 or 3 principal components, approximately 54-69% of the total variance is retained, allowing for efficient downstream tasks such as clustering and association rule mining while preserving the most significant information about pollutant variability across cities.")
 
         st.markdown("#### Data Prep and Code")
+        st.write("""
 
+        1. The `final_cleaned.csv` dataset is loaded, which contains air quality data (pollutant levels) and geographic information (latitude and longitude).
+        
+        2. The pollutants (`PM2.5`, `PM10`, `NO2`, `SO2`, `O3`, `CO`) are separated into columns with each location's specific data being indexed by `latitude` and `longitude`. This restructuring allows each pollutant to be analyzed individually.
+
+        3. Rows with missing values are dropped, ensuring only complete data is used for further analysis. This step is critical to avoid issues during normalization and clustering.
+
+        4. The data is normalized using `StandardScaler` so that all features (pollutant values, latitude, longitude) are transformed to have a mean of 0 and a standard deviation of 1. Normalization ensures that no single feature dominates the others during analysis, making the data suitable for PCA and clustering.
+
+        """)
+        st.image("Images/15.png", use_column_width=True, caption="Dataset Before Prep")
+        st.image("Images/PCA3.png", use_column_width=True, caption="Dataset after Prep")
 
         st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/PCA.ipynb)", unsafe_allow_html=True)
         st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
+
+        st.markdown("#### Results and Conclusion")
+        st.markdown("##### PCA with 2 components")
+        st.write("""
+
+        - **Principal Component Analysis (PCA)** was applied to reduce the dimensions of the dataset to 2 components. This reduction allows for better visualization while still retaining significant variance from the original data.
+
+        - The scatter plot above represents the data transformed into 2 principal components. Each point corresponds to a sample from the dataset, projected onto the two most important components (PC1 and PC2). This enables a clearer understanding of patterns or clusters in the data.
+
+        - The grid provides a clearer understanding of how the data is distributed across the principal components, and the axes are labeled accordingly to indicate the components being plotted.
+        """)
+        st.image("Images/PCA4.png", use_column_width=True, caption="PCA with 2 Components (2D)")
+
+        st.markdown("##### PCA with 3 components")
+        st.write("""
+
+        - PCA was performed to reduce the dimensionality of the data to three principal components. This is useful for analyzing the data in a simplified 3D space while retaining as much variability from the original dataset as possible.
+
+        - The 3D scatter plot visualizes the transformed dataset in the new three-dimensional space, where each axis represents one of the principal components (PC1, PC2, and PC3). The resulting plot shows how the data points are distributed across these three principal axes, with the majority of the data points concentrated in certain areas of the plot.
+
+        - By using PCA in this way, it becomes easier to visualize and interpret complex datasets with many variables by projecting them into a lower-dimensional space without losing significant information.
+        """)
+        st.image("Images/PCA5.png", use_column_width=True, caption="PCA with 3 Components (2D)")
+        st.write("""
+                 """)
+        st.write("After reducing the dataset to 2 dimensions, **54%** of the total variance is retained, meaning over half of the original information is preserved.")
+        st.image("Images/PCA6.png", caption="Variance Explained by the First Two Components", use_column_width=True)
+        st.write("""
+                 """)
+        st.write("After reducing the dataset to 3 dimensions, **69%** of the total variance is retained, preserving a significant portion of the original information.")
+        st.image("Images/PCA7.png", caption="Variance Explained by the First Three Components", use_column_width=True)
+        st.write("""
+                 """)
+        st.write("""
+        PCA aims to reduce the dimensionality of the dataset while retaining the majority of the information (variance) present in the original data. 
+        By calculating the cumulative explained variance, it becomes possible to determine how many principal components are needed to capture a certain percentage of the variance. 
+        In this case, the goal was to retain at least **95%** of the variance in the data. 
+        Upon running PCA on the normalized dataset, it was found that **7 components** are required to retain **95%** of the data's variance. 
+        This helps reduce complexity while preserving essential information in the dataset. The result shows that using fewer dimensions can still capture the majority of the underlying structure in the data.
+        """)
+        st.image("Images/PCA8.png", caption="Number of Components to Retain 95% of Variance", use_column_width=True)
+        st.write("""
+                 """)
+        st.write("""
+        Eigenvalues are proportional to the explained variance of the dataset. They represent the amount of variance captured by each principal component. The larger the eigenvalue, the more significant that principal component is in explaining the variance in the data.
+        """)
+        st.image("Images/PCA9.png", caption="Top Three Eigenvalues", use_column_width=True)
+
+
 
     elif sub_tab == "Conclusions":
         st.subheader("Conclusions")
