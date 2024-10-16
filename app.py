@@ -16,7 +16,7 @@ if main_tab == "Home":
     col1, col2 = st.columns([1, 2])  # Image in col1, text in col2
 
     with col1:
-        st.image("Images/20240908_235437.jpg", caption="This is me!")  # Your profile image
+        st.image("Images/20240908_235437.jpg", caption="This is me!")
 
     with col2:
         st.header("About Me")  # Header is now applied to the text side
@@ -414,7 +414,7 @@ elif main_tab == "Machine Learning":
 
         # Add a placeholder to display the dataset once it's uploaded or ready
         st.write("Cleaned Dataset:")
-
+        st.image("Images/15.png", use_column_width=True, caption="Cleaned Dataset")
 
         st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/Introduction_Code.ipynb)", unsafe_allow_html=True)
         st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
@@ -520,7 +520,7 @@ elif main_tab == "Machine Learning":
         st.subheader("Clustering")
         # Overview of Clustering
         st.write("""
-        #### Clustering Tab - Overview
+        #### Overview
 
         Clustering is a widely used method in data analysis to group similar data points based on certain distance measures. In this project, clustering techniques are applied to group cities and pollutants based on their air quality similarities. This helps identify patterns that might not be evident when analyzing individual cities. The clustering techniques used include **KMeans (partition clustering)**, **hierarchical clustering**, and **DBSCAN (density-based clustering)**. Distance metrics play a key role in determining which data points belong to the same cluster, so they are essential in all these methods.
         """)
@@ -725,7 +725,7 @@ elif main_tab == "Machine Learning":
     elif sub_tab == "Association Rule Mining":
         st.subheader("Association Rule Mining")
         st.write("""
-        ##### Overview
+        #### Overview
 
         Association Rule Mining (ARM) is a powerful data mining technique used to identify patterns and relationships within large datasets, particularly in transaction data. Its main goal is to discover interesting associations between items or itemsets, providing actionable insights for various fields such as retail, marketing, and healthcare.
 
@@ -758,7 +758,7 @@ elif main_tab == "Machine Learning":
         st.image("Images/ARM5.png", use_column_width=True, caption="Lift Formula")
 
         st.write("""
-        ##### Association Rules
+        #### Association Rules
 
         Association rules capture co-occurrence relationships between itemsets in the form {A} → {B}, where A is the antecedent and B is the consequent. These rules are valuable for identifying patterns such as "if a customer buys item A, they are likely to buy item B." For example, the rule {Bread, Butter} → {Milk} suggests that customers who purchase bread and butter are also likely to purchase milk. Association rules are vital for decision-making, such as product placement or marketing strategies.
         """)
@@ -766,7 +766,7 @@ elif main_tab == "Machine Learning":
         st.image("Images/ARM3.png", use_column_width=True, caption="Concepts of Association Mining")
 
         st.write("""
-        ##### Apriori Algorithm
+        #### Apriori Algorithm
 
         The **Apriori Algorithm** is a foundational algorithm for discovering frequent itemsets and generating association rules. It follows a "bottom-up" approach, where frequent itemsets are extended one item at a time. The algorithm works in two main stages:
 
@@ -799,8 +799,156 @@ elif main_tab == "Machine Learning":
         """)
 
         st.markdown("#### Data Preperation")
-        
+        # Explanation for transforming the dataset
+        st.write("""
+        Association Rule Mining (ARM) requires the data to be in a **transactional format**, where each row represents a "transaction" and each column represents the presence or absence of an item. In this case, the dataset consists of air quality data where each row corresponds to a pollution measurement event, and each pollutant (e.g., pm25, no2) is considered as an item.
+            
+        To prepare the dataset for ARM analysis, the following steps were applied:
+        1. **Binning**: The pollutant concentrations were categorized into bins such as 'Low', 'Medium', and 'High', which provides a more interpretable format for ARM.
+        2. **One-Hot Encoding**: Each pollutant level (e.g., `pm25_Low`, `no2_High`) is treated as a distinct item. One-hot encoding converts these categorical pollutant levels into a binary matrix, where `1/True` represents the presence of the specific pollutant level in a measurement event, and `0/False` represents its absence.
 
+        This transformation helps ARM identify the frequent co-occurrences of pollutant levels across different events, allowing for the discovery of meaningful patterns between pollutant levels.
+        """)
+
+        # Display the original dataset image
+        image_path_original = "Images/15.png" 
+        st.image(image_path_original, use_column_width=True, caption="Original Dataset Before Transformation")
+
+        # Display the binary dataset image
+        image_path_encoded = "Images/ARM6.png"
+        st.image(image_path_encoded, use_column_width=True, caption="Binary Transactional Dataset After Transformation")
+
+        # Conclusion for data transformation
+        st.write("""
+        The binary transactional dataset allows the application of **Association Rule Mining** techniques such as the Apriori algorithm, which helps in discovering frequent co-occurring patterns of different pollutant levels (Low, Medium, High). The transformation provides a clear view of which pollutant categories appear together, thus facilitating the analysis of air quality patterns.
+
+        This method helps to uncover important rules, like whether a certain level of pm25 is likely to occur alongside elevated levels of other pollutants such as no2 or so2. These insights can be crucial for understanding air pollution dynamics and providing actionable insights for environmental policy-making.
+        """)
+
+        st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/ARM.ipynb)", unsafe_allow_html=True)
+        st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
+
+        st.markdown("#### Results and Analysis")
+        st.write("""
+        ##### Top Rules Identification
+        The analysis through **Association Rule Mining (ARM)** identified significant relationships between different pollutant levels in the dataset. Using specific thresholds, the strongest associations between pollution measurements were extracted. These relationships offer crucial insights into how various pollutants co-occur in the atmosphere, helping to inform policies on air quality control and pollution mitigation.
+
+        ##### Thresholds Used:
+        - **Support Threshold**: 0.02 (minimum percentage of transactions where the itemset appears)
+        - **Confidence Threshold**: 0.35 (minimum expected likelihood of the consequent itemset occurring when the antecedent is present)
+
+        These thresholds were selected to capture the most relevant and meaningful patterns in the data. The top 15 rules for **support**, **confidence**, and **lift** were extracted and visualized.
+        """)
+
+        # Display for Top 15 Rules by Support
+        st.write("""
+        ##### Results by Support:
+        Support refers to the frequency with which an itemset appears in the dataset. In this analysis, the top 15 rules with the highest support were identified, showcasing which pollutant combinations most frequently occur together.
+        """)
+
+        # Add the image for Top 15 Rules by Support
+        st.image('Images/ARM7.png', caption='Top 15 Rules by Support', use_column_width=True)
+        st.write("##### Insights from Support-based Rules:")
+        st.write("""
+        - The most frequent association involves **pm25** and **pm10** levels. This is expected because both pollutants are commonly measured and tend to correlate in air quality datasets.
+        - The highest support value of 0.059 suggests that around 6% of the measurement events exhibit a correlation between **no2_Medium** and **o3_High**, indicating that these pollutants often appear together in significant quantities.
+        - High-support rules suggest widespread patterns that could help in designing air quality control strategies, where tackling one pollutant may automatically reduce the presence of another.
+        """)
+        # Display for Top 15 Rules by Confidence
+        st.write("""
+        ##### Results by Confidence:
+        Confidence measures how often item B appears in transactions that contain item A. The top 15 rules with the highest confidence were extracted, reflecting the strongest relationships between antecedent and consequent pollutant levels.
+        """)
+
+        # Add the image for Top 15 Rules by Confidence
+        st.image('Images/ARM8.png', caption='Top 15 Rules by Confidence', use_column_width=True)
+        st.write("##### Insights from Confidence-based Rules:")
+        st.write("""
+        - **o3_Low and so2_Low → no2_Low** is the highest-confidence rule, with a confidence of 0.71, meaning that when **o3** and **so2** levels are low, there is a 71% chance that **no2** will also be low.
+        - Many high-confidence rules involve combinations of low pollutant levels, which suggests that the presence of one pollutant at low levels often corresponds to others being low as well.
+        - The high-confidence rules are crucial for predicting air quality: they suggest reliable conditions where multiple pollutants can be effectively managed together.
+        """)
+        # Display for Top 15 Rules by Lift
+        st.write("""
+        ##### Results by Lift:
+        Lift is a measure of how much more likely item B is to appear when item A is present compared to when B appears independently. A higher lift value indicates a stronger association. The top 15 rules with the highest lift values provide the most significant insights into the co-occurrence patterns of pollutants.
+        """)
+
+        # Add the image for Top 15 Rules by Lift
+        st.image('Images/ARM9.png', caption='Top 15 Rules by Lift', use_column_width=True)
+        st.write("##### Insights from Lift-based Rules:")
+        st.write("""
+        - The rule **no2_Low and o3_Low → so2_Low** has the highest lift of 6.45, which indicates that the presence of **no2_Low** and **o3_Low** increases the likelihood of **so2_Low** by over 6 times.
+        - High-lift rules identify pollutant combinations that are more likely to co-occur than expected by chance, revealing strong interdependencies between these pollutants.
+        - These associations may reflect atmospheric or environmental factors that cause certain pollutants to move together. For instance, regulatory or weather conditions may favor these joint reductions.
+        """)
+        st.write("""
+        ##### Scatter Plot: Association Rules (Support vs Confidence)
+        The scatter plot below visualizes the relationship between **support** and **confidence**, with the size and color of the points representing the **lift** values. Larger and darker circles indicate higher lift values, representing stronger associations.
+        """)
+        st.image('Images/ARM10.png', caption="Scatter Plot: Support vs Confidence", use_column_width=True)
+        st.write("""
+        ##### Insights from Scatter Plot:
+        - The largest rule based on lift involves **so2_Low** and **no2_Low**, which appears prominently due to its high lift and strong confidence. This rule is highly likely to occur in most cases.
+        - Points that are both large and high on the y-axis (confidence) indicate reliable associations that can be used to forecast pollutant behaviors.
+        - A positive relationship between support and confidence is observed, meaning that frequent associations tend to be more reliable.
+        """)
+        # Network of Association Rules visualization
+        st.write("""
+        ##### Network of Association Rules
+        The network graph below depicts the relationships between different pollutant levels, where the nodes represent pollutants, and the edges (arrows) represent the association rules. The thickness of the edges corresponds to the support of the rules, and the labels indicate the confidence and lift values.
+        """)
+        st.image('Images/ARM11.png', caption="Network of Association Rules", use_column_width=True)
+        st.write("""
+        ##### Insights from Network Visualization:
+        - The network clearly shows how **co_Low** serves as a central node, meaning that **co_Low** frequently appears with other pollutants. This suggests that interventions focusing on reducing **co** may positively affect other pollutants.
+        - The thickest edges in the network correspond to the most frequent associations (i.e., high support values), making them key targets for policy and regulatory decisions.
+        - The rule **o3_Low, so2_Low → no2_Low** stands out due to its high confidence and lift values, making it one of the most actionable patterns in this dataset.
+        """)
+
+        st.write("""
+        #### Conclusion
+
+        This Association Rule Mining analysis provided a deeper understanding of the co-occurrence of different pollutants. The results offer valuable insights:
+
+        1. **High-support rules** identify widespread pollutant patterns that could inform public health initiatives and environmental regulations.
+        2. **High-confidence rules** suggest reliable co-occurrences, aiding in the prediction of air quality conditions.
+        3. **High-lift rules** uncover strong, non-random associations, suggesting key pollutant interdependencies that are useful for targeted interventions.
+
+        By analyzing these relationships, environmental agencies can prioritize the most impactful strategies for improving air quality, focusing on pollutant pairs that tend to occur together.
+        """)
+
+        st.write("""
+        #### Learnings
+
+        The Association Rule Mining (ARM) analysis of air pollutant data uncovered critical insights into the relationships between various pollutant levels such as **PM2.5**, **PM10**, **NO2**, **SO2**, **O3**, and **CO**. These associations provide a deeper understanding of how certain pollutants co-occur, which can guide strategies for air quality management, pollution control, and public health initiatives.
+
+        ##### Key Insights on Pollutant Associations:
+        The ARM analysis revealed strong co-occurrences among several pollutant levels, helping to identify which pollutants are likely to occur together under specific environmental conditions.
+
+        - **Low levels of multiple pollutants often occur together**: The most frequent rules identified suggest that low levels of pollutants like **SO2**, **NO2**, and **O3** tend to occur simultaneously. This pattern suggests that regions or periods with lower industrial or vehicular activity likely see a general reduction in air pollution.
+        - **CO as a central pollutant**: The analysis revealed that **CO_Low** serves as a central node in many association rules. This implies that reductions in **CO** levels are often accompanied by reductions in other pollutants, making it a key target for improving overall air quality.
+        
+        ##### Influence of Pollutant Relationships:
+        The relationships uncovered between pollutants have important implications for air quality management:
+
+        - **Simultaneous Reduction of Multiple Pollutants**: Reducing levels of one pollutant, such as **CO**, may have the added benefit of lowering other pollutants. This co-reduction pattern can help policymakers design more efficient air quality management strategies, targeting multiple pollutants simultaneously.
+        - **Pollutant Buildup and Weather Conditions**: The strong associations between **NO2**, **SO2**, and **O3** suggest that weather conditions like high pressure or temperature inversions could cause certain pollutants to accumulate together. Understanding these patterns can guide public warnings during pollution spikes.
+
+        ##### Regional Air Quality Management:
+        These insights can help tailor air quality policies to specific regions or cities by understanding their unique pollutant combinations and environmental factors.
+
+        - **Targeted Interventions**: For example, regions with high co-occurrence of **SO2** and **NO2** might require more stringent controls on industrial emissions, while areas with high **O3** could benefit from traffic reduction measures.
+        - **Seasonal Patterns**: The associations revealed could also help predict seasonal pollution patterns, as certain combinations of pollutants are more prevalent during particular weather conditions or seasons.
+
+        ##### Supporting Sustainable Urban Development:
+        The patterns identified through ARM can inform sustainable urban development by focusing efforts on reducing emissions from key sources and improving air quality in densely populated areas.
+
+        - **Informed Public Health Strategies**: By understanding which pollutants tend to spike together, public health officials can better predict periods of poor air quality and issue timely advisories to protect vulnerable populations.
+        - **Supporting Policy Decisions**: The insights gained from this analysis can inform long-term policy decisions aimed at reducing pollutant concentrations and improving air quality, which is essential for sustainable urban planning.
+
+        In conclusion, the ARM analysis provided essential insights into pollutant interactions and co-occurrences, revealing patterns that can guide more effective air quality interventions. By targeting the most frequent and impactful pollutant combinations, stakeholders can create more robust environmental policies and public health strategies to reduce air pollution and protect communities from the adverse effects of poor air quality.
+        """)
 
     elif sub_tab == "Conclusions":
         st.subheader("Conclusions")
