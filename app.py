@@ -37,7 +37,7 @@ elif main_tab == "Machine Learning":
 
     # Nested sub-tabs under Machine Learning, also in the sidebar
     with st.sidebar:
-        sub_tab = st.selectbox("Choose a topic", ["Introduction", "Data Gathering", "Data Prep/EDA", "PCA", "Clustering", "ARM", "Conclusions"])
+        sub_tab = st.selectbox("Choose a topic", ["Introduction", "Data Gathering", "Data Prep/EDA", "PCA", "Clustering", "Association Rule Mining", "Conclusions"])
 
     if sub_tab == "Introduction":
         st.subheader("Introduction")
@@ -452,10 +452,13 @@ elif main_tab == "Machine Learning":
         st.image("Images/15.png", use_column_width=True, caption="Dataset Before Prep")
         st.image("Images/PCA3.png", use_column_width=True, caption="Dataset after Prep")
 
+        st.image("Images/Cluster7.png", use_column_width=True, caption="PCA-Transformed Data")
+
+
         st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/PCA.ipynb)", unsafe_allow_html=True)
         st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
 
-        st.markdown("#### Results and Conclusion")
+        st.markdown("#### Results")
         st.markdown("##### PCA with 2 components")
         st.write("""
 
@@ -495,6 +498,7 @@ elif main_tab == "Machine Learning":
         This helps reduce complexity while preserving essential information in the dataset. The result shows that using fewer dimensions can still capture the majority of the underlying structure in the data.
         """)
         st.image("Images/PCA8.png", caption="Number of Components to Retain 95% of Variance", use_column_width=True)
+        st.image("Images/PCA10.png", caption="Cumulative Variance Explained by Principal Components", use_column_width=True)
         st.write("""
                  """)
         st.write("""
@@ -502,6 +506,300 @@ elif main_tab == "Machine Learning":
         """)
         st.image("Images/PCA9.png", caption="Top Three Eigenvalues", use_column_width=True)
 
+        st.write("""
+        #### Conclusion
+
+        Principal Component Analysis (PCA) was effectively applied to reduce the dimensionality of the dataset while retaining a significant amount of variance. This dimensionality reduction simplifies the data, making it easier to process, visualize, and analyze while still preserving the essential patterns present in the original high-dimensional dataset.
+
+        The most important principal components identified by PCA captured the majority of the dataset’s variance, emphasizing their importance in explaining the key patterns in the data. By reducing the complexity of the dataset, PCA facilitates a more efficient analysis without significant loss of information. This dimensionality reduction method has proven valuable in enhancing the interpretability of the dataset, improving the overall analytical process by focusing on the most informative components.
+
+        In conclusion, PCA successfully streamlined the data, retaining its critical information while simplifying its structure. This approach provides clearer insights, allows for improved visualization, and lays the foundation for further clustering or predictive analysis.
+        """)
+
+    elif sub_tab == "Clustering":
+        st.subheader("Clustering")
+        # Overview of Clustering
+        st.write("""
+        #### Clustering Tab - Overview
+
+        Clustering is a widely used method in data analysis to group similar data points based on certain distance measures. In this project, clustering techniques are applied to group cities and pollutants based on their air quality similarities. This helps identify patterns that might not be evident when analyzing individual cities. The clustering techniques used include **KMeans (partition clustering)**, **hierarchical clustering**, and **DBSCAN (density-based clustering)**. Distance metrics play a key role in determining which data points belong to the same cluster, so they are essential in all these methods.
+        """)
+
+        # Explanation of Distance Metrics
+        st.write("""
+        #### Distance Metrics in Clustering
+        In all clustering methods, distance measures are used to calculate how close or far data points are from each other. These metrics are crucial for determining cluster assignments. The following distance measures are commonly used:
+
+        - **Euclidean Distance**: The straight-line distance between two points in Euclidean space. It is widely used in KMeans clustering.
+        - **Manhattan Distance**: Measures the distance between two points along the axes at right angles (like navigating city blocks).
+        - **Cosine Similarity**: Measures the cosine of the angle between two vectors, commonly used in text and document clustering.
+
+        For this project, **Euclidean distance** is primarily used for partition and hierarchical clustering as it effectively measures similarities in pollution levels across different cities.
+        """)
+
+        # Add image for Distance Metrics
+        st.image('Images/Cluster1.png', caption='Visual Representation of Distance Metrics')
+
+        # Explanation of Partition Clustering (KMeans)
+        st.write("""
+        #### Partition Clustering (KMeans)
+        KMeans is a partition-based clustering algorithm that divides data into *k* clusters by iteratively minimizing the variance within each cluster. It assigns each data point to the nearest cluster centroid using **Euclidean distance**, and recalculates centroids based on the current cluster assignments until convergence is achieved.
+
+        - **Advantages**: KMeans is simple, fast, and efficient, especially for large datasets where clusters are well-separated. It scales well and is easy to implement. 
+        - **Drawbacks**: The algorithm is sensitive to the initial choice of centroids, which can lead to different results. It also requires specifying the number of clusters (*k*) beforehand, which may not always be known.
+
+        In this project, **KMeans** is used to identify clusters of cities with similar air pollution profiles. Through the Silhouette method, the optimal number of clusters is determined, and cities are grouped accordingly.
+        """)
+
+        # Image 1 Placeholder for KMeans Visualization
+        st.image('Images/Cluster2.png', caption='KMeans Clustering Visualization')
+
+        # Explanation of Hierarchical Clustering
+        st.write("""
+        #### Hierarchical Clustering
+        Hierarchical clustering builds a hierarchy of clusters using **distance measures** (usually Euclidean or Manhattan) to calculate how closely data points are related. In agglomerative clustering, each data point starts as its own cluster, and pairs of clusters are merged iteratively based on their proximity until all points belong to a single cluster.
+
+        - **Advantages**: No need to specify the number of clusters upfront, and it provides a comprehensive view of the data at different levels of granularity through a dendrogram.
+        - **Drawbacks**: It is computationally intensive for large datasets and sensitive to noise and outliers. Hierarchical clustering is harder to scale due to its quadratic complexity.
+
+        In the project, **hierarchical clustering** helps reveal hierarchical relationships between cities based on air quality levels. The dendrogram created shows how similar or different cities are in terms of pollution.
+        """)
+
+        # Image 2 Placeholder for Hierarchical Clustering Visualization
+        st.image('Images/Cluster3.png', caption='Hierarchical Clustering Dendrogram')
+        
+        # Explanation of DBSCAN
+        st.write("""
+        #### DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+        DBSCAN is a density-based clustering method that identifies clusters based on regions of high data density. Instead of relying on distance metrics like Euclidean distance for all points, DBSCAN looks for dense clusters and labels points in sparse regions as outliers.
+
+        - **Advantages**: DBSCAN can find clusters of arbitrary shapes and sizes, and it does not require specifying the number of clusters beforehand. It works well for datasets with noise and varying densities.
+        - **Drawbacks**: The performance of DBSCAN is sensitive to the choice of hyperparameters (*eps* and *min_samples*). It may struggle with varying densities within the same dataset.
+
+        In this project, **DBSCAN** is useful for detecting outliers and unusual pollution patterns in specific cities that do not fit well into larger clusters.
+        """)
+
+        # Add image for DBSCAN Clustering
+        st.image('Images/Clustering4.png', caption='DBSCAN Clustering Visualization')
+
+        st.markdown("#### Data Preperation")
+
+        st.image("Images/15.png", use_column_width=True, caption="Dataset Before Preperation")
+        st.write("""
+                 """)
+        st.write("""
+        1. The columns `latitude` and `longitude` are separated from the main dataset for later use in merging back geographical data.
+        2. The data is pivoted to create individual columns for each pollutant, such as `pm25`, `pm10`, `no2`, `so2`, `o3`, and `co`. This makes it easier to analyze the pollutant levels for each location and timestamp.
+        3. The latitude and longitude columns are merged back with the pivoted data to retain geographical information alongside the pollutant data.
+        4. Rows with any missing pollutant values are removed to ensure clean data is used for further processing and analysis.
+        5. Below is the first five rows of the raw pollutant data before normalization.
+
+        """)
+        st.image("Images/Cluster5.png", use_column_width=True, caption="Dataset Before Normalization")
+        st.write("""
+                 """)
+        st.write("""
+        1. The `StandardScaler` is applied to the dataset, transforming each feature (pollutants and geographical coordinates) so that they have a mean of 0 and a standard deviation of 1.
+        2. Normalization ensures that all the variables (pollutants like `pm25`, `pm10`, etc.) are on the same scale. This is crucial when applying algorithms like KMeans and PCA, as they are sensitive to feature scales.
+        3. Below is the first five rows of the normalized pollutant data.
+
+        """)
+        st.image("Images/Cluster6.png", use_column_width=True, caption="Dataset After Normalization")
+        st.write("""
+                 """)
+        
+        st.write("""
+        1. The data was reduced to 3 principal components (`PC1`, `PC2`, `PC3`). These components capture the maximum variance in the data while lowering the complexity of the dataset.
+        2. **Why Use PCA?** PCA helps to simplify the data, making it easier to visualize and process, especially when dealing with high-dimensional datasets. It retains the most significant information while reducing redundant features.
+        3. Below is the first five rows of the data after applying PCA, with the resulting principal components.
+
+        """)
+        st.image("Images/Cluster7.png", use_column_width=True, caption="PCA-Transformed Data")
+        st.write("""
+                 """)
+        st.image("Images/Cluster8.png", use_column_width=True, caption="PCA-Transformed Data")
+        st.write("""
+        The image above shows the cumulative variance explained by the first three principal components of the dataset. After applying PCA (Principal Component Analysis), it was determined that the first three principal components explain approximately **71%** of the total variance present in the data.
+        """)
+
+        st.markdown("#### Code and Results")
+        st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/Clustering.ipynb)", unsafe_allow_html=True)
+        st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)", unsafe_allow_html=True)
+        
+        st.markdown("#### K-Means Clustering")
+        st.image("Images/Cluster9.png", use_column_width=True, caption="Silhouette Scores for Different K")
+        # Explanation
+        st.write("""
+        In this part of the analysis, the **Silhouette Score** is used to determine the optimal number of clusters (`k`) for KMeans clustering. The Silhouette Score quantifies how well points are clustered by calculating how similar a point is to its own cluster compared to other clusters.
+
+        The plot illustrates the **Silhouette Scores** for `k=2`, `k=3`, `k=4`, `k=5`, and `k=6`. Higher score values indicate better clustering, meaning that points are more distinct and well-grouped within their respective clusters.
+
+        It is observed from the graph that the highest silhouette scores are achieved for `k=2`, `k=3`, and `k=5`. Therefore, these values of `k` are selected for further analysis. These values provide the best balance between cluster separation and compactness, which are key criteria for effective clustering. This process ensures that the chosen clusters represent the most meaningful divisions within the dataset.
+        
+        Due to the large number of data points, the computation required for this analysis was time-intensive.
+        """)
+        st.write("""
+                 """)
+        st.image("Images/Cluster10.png", use_column_width=True, caption="Plots FOR K = 3, K= 5 AND K =7")
+        st.write("""
+        The figure illustrates the 3D KMeans clustering results for three different values of `k` (number of clusters): `k=2`, `k=3`, and `k=5`, which were determined to be optimal using the **Silhouette Score** method. The clustering has been performed on the PCA-reduced 3D data, representing the most important dimensions (principal components).
+
+        Each plot shows the distinct clusters formed by KMeans, with cluster centroids marked by **red "X"** symbols. These centroids represent the central points of each cluster, calculated by the KMeans algorithm based on minimizing the variance within clusters.
+
+        - **For k=2**: The data is split into two primary clusters, with a large cluster on one side and a smaller one on the opposite. This clustering seems to capture broad distinctions within the dataset.
+        - **For k=3**: A third cluster emerges, indicating that more granular divisions are being captured by the model, and the data shows slightly improved separability.
+        - **For k=5**: Five clusters show more detailed separation, allowing for a deeper understanding of the patterns and groupings within the dataset.
+
+        The plots allow for a visual comparison of how the data is divided for each value of `k`. Increasing `k` results in finer divisions of the data, but it is important to balance granularity with interpretability. 
+        """)
+
+        st.markdown("#### Hierarchical Clustering")
+        st.write("""
+        Hierarchical clustering is a method used to build a hierarchy of clusters in a dataset by either iteratively merging or splitting clusters based on their proximity. In this project, the **Ward's method** is utilized, which minimizes the variance within each cluster. 
+
+        Due to memory constraints, only 10,000 samples were selected from the dataset to generate the dendrogram. The dendrogram, displayed below, provides a visual representation of how clusters are merged at different distances. Each branch of the dendrogram represents a cluster, and the length of the branches (height) indicates the distance between clusters at the time of merging. Clusters are formed by cutting the dendrogram at a specific distance, which will result in a certain number of clusters based on how many branches are cut.
+
+        """)
+        st.image("Images/Cluster11.png", use_column_width=True, caption="Dendrogram for Hierarchical Clustering")
+        st.write("""
+        The dendrogram reveals that two main clusters are formed at a larger distance, with smaller sub-clusters being identified as we move down the hierarchy. This provides insight into the natural grouping of the data points, as well as how close or distant different clusters are. The hierarchical clustering structure can be leveraged to decide the number of clusters in further analysis or to visualize the relationships between the clusters at different levels of granularity.
+        """)
+        st.write("""
+        The hierarchical clustering results, as visualized by the dendrogram, can be compared to the **KMeans clustering** results in several key ways:
+
+        1. **Number of clusters**: In hierarchical clustering, the number of clusters is determined by cutting the dendrogram at a certain distance. The KMeans approach, however, requires the number of clusters (`k`) to be specified in advance. In this case, the optimal number of clusters for KMeans was determined using the silhouette score, selecting `k=2`, `k=3`, and `k=5`, while the dendrogram provides a more dynamic range of possible clusters.
+
+        2. **Cluster hierarchy**: The dendrogram offers a clear hierarchy of clusters, showing how smaller clusters combine into larger ones at different distances. KMeans, on the other hand, provides distinct and non-hierarchical clusters, where data points are grouped solely based on proximity to centroids. This means that hierarchical clustering gives more flexibility for visualizing clusters at different granularities, while KMeans creates flat, non-overlapping clusters.
+
+        3. **Cluster structure**: KMeans clustering is centroid-based and tends to create spherical clusters. The dendrogram, however, suggests a more hierarchical and flexible grouping that may accommodate non-spherical cluster shapes better. This hierarchical structure is useful in cases where the data contains nested or irregularly shaped clusters.
+
+        4. **Scalability**: Hierarchical clustering, particularly the Ward method used here, is computationally more expensive than KMeans, especially for larger datasets. As noted, memory constraints limited the hierarchical clustering to 10,000 samples, whereas KMeans was applied to the entire dataset. This makes KMeans a more practical choice for large-scale clustering tasks, although hierarchical clustering offers deeper insights into cluster relationships.
+
+        Overall, while KMeans provides efficient and well-separated clusters, hierarchical clustering offers a broader perspective on how the data clusters evolve, making it a valuable method for exploring the structure of the data at different levels.
+        """)
+
+        st.markdown("#### DBSCAN")
+        st.write("""
+        In this part of the project, **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)** is applied to the PCA-transformed dataset. Unlike KMeans, which creates clusters based on predefined centroids, DBSCAN identifies clusters based on the density of points, making it ideal for finding clusters of varying shapes and sizes, as well as detecting outliers.
+
+        The plot illustrates the results of applying DBSCAN to the 3D PCA data. Each point represents a data sample, and the colors indicate the cluster labels assigned by the DBSCAN algorithm. DBSCAN can identify points that do not belong to any cluster (outliers) and label them as -1 (not visible in this case). A color bar is added to indicate which color corresponds to each cluster label.
+
+        Since DBSCAN does not require the number of clusters (`k`) to be predefined, it is particularly useful for datasets where the number of clusters is unknown or varies across the data. The algorithm groups closely packed points into clusters and treats points in low-density regions as noise.
+        """)
+        st.image("Images/Cluster12.png", use_column_width=True, caption="DBSCAN Clustering")
+
+        st.write("""
+        **KMeans** clustering performed effectively in forming well-defined, spherical clusters, as evidenced by the relatively high silhouette scores. The method successfully grouped data into distinct clusters, especially for the chosen `k=2`, `k=3`, and `k=5`, where the silhouette scores indicated strong cluster separation. The clusters were compact, and the centroids were easily identified, making KMeans a reliable choice when the number of clusters is known or can be determined through evaluation metrics like the silhouette score.
+
+        **Hierarchical Clustering**, on the other hand, provided a deeper understanding of the data by uncovering relationships at multiple levels of granularity. Through the dendrogram, it was possible to see how clusters are formed progressively, from individual points to larger groupings. This method is particularly useful for exploring hierarchical relationships in the data and can reveal nested structures that are not immediately apparent in flat clustering methods like KMeans. However, it is more computationally expensive and may struggle with large datasets.
+
+        **DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) offered a different perspective by detecting clusters based on density rather than centroids or distance. One of DBSCAN's strengths is its ability to identify noise and outliers, which is a significant advantage over KMeans and Hierarchical Clustering, both of which assign every point to a cluster. However, while DBSCAN excels at handling irregularly shaped clusters and noise, the resulting clusters were less well-defined than those produced by KMeans. The effectiveness of DBSCAN also heavily depends on selecting the right hyperparameters (`eps` and `min_samples`), which can be challenging and may require experimentation.
+
+        In conclusion, each clustering method brings its own strengths:
+        
+        - **KMeans** is ideal for datasets where clusters are approximately spherical, and the number of clusters is known or can be inferred.
+        - **Hierarchical Clustering** offers insight into how clusters are related at different levels, revealing the data's structure at varying degrees of granularity.
+        - **DBSCAN** is well-suited for detecting noise and irregularly shaped clusters, making it useful for datasets with outliers or varying densities.
+
+        The choice of the clustering algorithm ultimately depends on the nature of the data and the goals of the analysis. In this project, KMeans provided the clearest clustering results with well-defined groups, while Hierarchical Clustering allowed for an exploration of relationships within the data. DBSCAN added value by identifying noise and outliers, which the other methods could not detect as effectively.
+        """)
+
+        st.markdown("#### Learnings")
+        st.write("""
+
+        The analysis of global air quality highlighted important trends and patterns that can help shape future environmental actions:
+
+        - **Diverse Pollution Levels:** Air pollution varies significantly across cities and regions. Understanding these variations is crucial for addressing the unique challenges faced by both densely populated urban areas and smaller, rural regions. This knowledge can guide governments and organizations in targeting their efforts to improve air quality where it’s needed the most.
+
+        - **The Role of Clustering:** By grouping cities with similar pollution levels, we can identify trends that go beyond individual locations. This kind of information can help policymakers focus on regional solutions to improve air quality rather than adopting a one-size-fits-all approach.
+
+        - **Seasonal and Geographic Patterns:** The data shows that air quality changes with the seasons and is influenced by factors like population density and industrial activity. A deeper understanding of these trends could help cities prepare for periods of poor air quality and take proactive steps to protect public health.
+
+        - **Visualizing the Big Picture:** Simplifying complex data helps to better understand the overall trends. This approach makes it easier to communicate findings and make informed decisions about improving air quality for everyone.
+
+        - **Real-World Impact:** These insights can empower local authorities and environmental groups to prioritize their efforts, focusing on the most pressing pollution issues. It also highlights the need for continued monitoring and action to create healthier and cleaner environments for communities across the world.
+
+        In conclusion, this project demonstrates the importance of using data to understand and address the complex issue of air pollution. Through collaboration and targeted action, there is the potential to make significant improvements in the air we breathe.
+        """)
+    
+    elif sub_tab == "Association Rule Mining":
+        st.subheader("Association Rule Mining")
+        st.write("""
+        ##### Overview
+
+        Association Rule Mining (ARM) is a powerful data mining technique used to identify patterns and relationships within large datasets, particularly in transaction data. Its main goal is to discover interesting associations between items or itemsets, providing actionable insights for various fields such as retail, marketing, and healthcare.
+
+        ##### Key Measures in ARM
+
+        1. **Support**:
+            - Support measures the frequency with which an item or itemset appears in the dataset. It helps to determine how often a particular item occurs and filter out irrelevant or rare itemsets that may not provide useful insights.
+            - Support(A) = (Transactions containing item A) / (Total transactions)
+            - Higher support indicates that an item or itemset is more frequent.
+        """)
+        # Image for Support
+        st.image("Images/ARM1.png", use_column_width=True, caption="Support Formula")
+
+        st.write("""
+        2. **Confidence**:
+            - Confidence measures the strength of the association between itemsets. Specifically, it calculates how often item B appears in transactions that contain item A.
+            - Confidence(A → B) = (Transactions containing both A and B) / (Transactions containing A)
+            - Higher confidence means a stronger relationship between the items.
+        """)
+        # Image for Confidence
+        st.image("Images/ARM2.png", use_column_width=True, caption="Confidence Formula")
+
+        st.write("""
+        3. **Lift**:
+            - Lift evaluates the strength of an association rule by considering the co-occurrence of items relative to their independent frequencies. A lift value greater than 1 indicates a positive association between the items.
+            - Lift(A → B) = Support(A, B) / (Support(A) × Support(B))
+            - A higher lift value indicates that item B is more likely to occur when item A is present, compared to a random occurrence.
+        """)
+        # Image for Lift
+        st.image("Images/ARM5.png", use_column_width=True, caption="Lift Formula")
+
+        st.write("""
+        ##### Association Rules
+
+        Association rules capture co-occurrence relationships between itemsets in the form {A} → {B}, where A is the antecedent and B is the consequent. These rules are valuable for identifying patterns such as "if a customer buys item A, they are likely to buy item B." For example, the rule {Bread, Butter} → {Milk} suggests that customers who purchase bread and butter are also likely to purchase milk. Association rules are vital for decision-making, such as product placement or marketing strategies.
+        """)
+        # Conceptual image for ARM
+        st.image("Images/ARM3.png", use_column_width=True, caption="Concepts of Association Mining")
+
+        st.write("""
+        ##### Apriori Algorithm
+
+        The **Apriori Algorithm** is a foundational algorithm for discovering frequent itemsets and generating association rules. It follows a "bottom-up" approach, where frequent itemsets are extended one item at a time. The algorithm works in two main stages:
+
+        1. **Frequent Itemset Generation**:
+            - **Candidate Generation**: Initially, the algorithm identifies all individual items in the dataset and calculates their support. Items meeting the minimum support threshold are considered frequent.
+            - **Candidate Pruning**: In each iteration, new itemsets are generated by combining previously identified frequent itemsets. Itemsets that do not meet the minimum support threshold are discarded.
+
+        2. **Association Rule Generation**:
+            - Once frequent itemsets are identified, association rules are generated by splitting itemsets into antecedent and consequent parts. Metrics such as support, confidence, and lift are calculated to evaluate the quality of these rules.
+
+        The Apriori Algorithm is efficient due to its pruning strategy, where only frequent itemsets are expanded to larger ones.
+        """)
+        # Image for Apriori Algorithm
+        st.image("Images/ARM4.png", use_column_width=True, caption="Apriori Algorithm")
+        st.write("""
+        The visualization above demonstrates how the **Apriori Algorithm** is applied to a dataset, specifically showing relationships between various items in transactions. The Apriori Algorithm is used here to identify frequent itemsets and association rules, helping to uncover patterns such as which items are commonly purchased together.
+
+        - **Nodes**: Each node represents an item, such as "whole milk," "yogurt," or "tropical fruit." The size of the node indicates the frequency of the item, where larger nodes represent items with higher support (i.e., items that appear in a larger proportion of transactions).
+        - **Arrows**: The arrows represent **association rules** derived from frequent itemsets. They show the direction of the rule, indicating that when the items on the left-hand side (antecedent) are purchased, the items on the right-hand side (consequent) are likely to be purchased as well.
+        - **Colors**: The color intensity reflects different confidence levels for each rule. Darker colors indicate higher confidence, meaning a stronger relationship between the antecedent and consequent.
+
+        This visualization helps to understand how items are associated in transactions and how the Apriori Algorithm can be used to drive strategies such as product placement, marketing campaigns, or targeted promotions.
+        """)
+        st.write("""
+        """)
+        st.write("""
+        In this project, **Association Rule Mining (ARM)** was applied to explore relationships between pollutants and their levels across different locations. The **Apriori Algorithm** was used to identify frequent pollutant combinations and generate association rules. The key measures (Support, Confidence, and Lift) were used to filter out significant relationships, offering insights into how certain pollutants co-occur in various regions.
+
+        The findings from ARM could be crucial for policymakers and environmental agencies, guiding their decisions on air quality management, especially in areas where multiple pollutants are present at concerning levels.
+        """)
+
+        st.markdown("#### Data Preperation")
+        
 
 
     elif sub_tab == "Conclusions":
