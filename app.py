@@ -1646,6 +1646,19 @@ Proper data preparation is essential for building effective regression models. S
         st.image("Images/Reg8.png", caption="y_train Dataset", use_column_width=True)
         st.image("Images/Reg9.png", caption="y_test Dataset", use_column_width=True)
 
+        st.write("#### Importance of Creating a Disjoint Split")
+
+        st.write("""
+        ##### Prevention of Overfitting
+        Models trained on data learn specific patterns and relationships from the training dataset. If the same data is used for both training and evaluation, performance metrics can appear artificially inflated due to the model's prior exposure to the data. This situation, referred to as **data leakage**, results in overfitting, where the model may perform exceptionally well on known data but exhibit poor generalization on unseen data. A disjoint split ensures that evaluation occurs on data that has not been seen during training, thus providing an unbiased assessment of model performance and reducing overfitting risk.
+
+        ##### Assessment of Generalization Capability
+        Machine learning models must generalize effectively to new and previously unseen data. Using a disjoint test set simulates real-world scenarios where models are deployed to predict or classify novel inputs. For the air quality dataset, this approach enables a robust evaluation of the model's predictive ability on new pollutant measurements, including `pm25`, `pm10`, and other features.
+
+        ##### Validation of Model Robustness
+        When models are trained and evaluated on overlapping data, there is a risk that unique characteristics or outliers in the training data may be memorized. This behavior compromises the model's robustness and reliability. Ensuring a disjoint split allows the test set to serve as an unbiased benchmark for evaluating the model's predictions, confirming that predictions are driven by learned patterns rather than noise or specific training artifacts.
+        """)
+
         # Link to code and data
         st.markdown("#### Code and Data")
         st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/Regression.ipynb)")
