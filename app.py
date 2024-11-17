@@ -42,29 +42,28 @@ elif main_tab == "Machine Learning":
     if sub_tab == "Introduction":
         st.subheader("Introduction")
         st.write("""
-        Air quality has become one of the most pressing environmental challenges of the 21st century. With rapid urbanization, industrial growth, and a burgeoning global population, the atmosphere is facing unprecedented levels of pollution. Poor air quality is linked to a variety of health problems, from respiratory diseases such as asthma and bronchitis to cardiovascular conditions and even premature death. The World Health Organization (WHO) estimates that millions of premature deaths annually are attributable to outdoor air pollution, underscoring its severe impact on global public health. Additionally, deteriorating air quality has far-reaching economic consequences, including escalating healthcare costs, reduced workforce productivity, and loss of biodiversity, making it a significant issue for policymakers, public health experts, and the global economy alike.
+Air quality has become one of the most pressing environmental challenges of the 21st century. Rapid urbanization, industrial growth, and a burgeoning global population have led to unprecedented levels of pollution, significantly affecting the air we breathe. Poor air quality is strongly linked to a variety of health problems, ranging from respiratory diseases such as asthma, chronic obstructive pulmonary disease (COPD), and bronchitis, to cardiovascular conditions and even premature death. The World Health Organization (WHO) reports that millions of premature deaths occur every year due to outdoor air pollution, emphasizing the critical impact it has on global public health. Beyond its impact on human health, deteriorating air quality has severe economic implications, such as rising healthcare costs, diminished workforce productivity, and loss of biodiversity, making it a focal issue for policymakers, public health advocates, and economic planners across the globe.        """)
+
+        st.write("""
+Among the major air pollutants of concern are particulate matter, particularly PM2.5 and PM10, which can penetrate deep into the lungs and even enter the bloodstream, leading to long-term health issues. Gaseous pollutants like carbon monoxide (CO), nitrogen dioxide (NO2), sulfur dioxide (SO2), and ozone (O3) also contribute substantially to air pollution's harmful effects, impacting human health, ecosystems, and climate stability. Long-term exposure to these pollutants can lead to severe chronic diseases and accelerate the effects of climate change. The interactions between pollutants, their sources, and environmental factors such as weather conditions make air pollution a complex challenge to tackle. This complexity necessitates the use of data-driven approaches to thoroughly understand and effectively mitigate the impacts of air pollution on society.        """)
+
+        st.write("""
+In this project, air quality data from key cities worldwide, including urban centers such as London, Delhi, Denver, and Beijing, are analyzed to understand patterns in air pollution from 2007 to 2024. These cities were chosen due to their diverse geographical, climatic, and economic conditions, allowing for a comprehensive comparative analysis of air pollution trends. For instance, London, a city with a significant industrial history and recent emphasis on green energy initiatives, highlights the challenges of combating pollution from urban traffic and industry. Meanwhile, Delhi, one of the most polluted cities globally, faces acute issues related to vehicular emissions, coal burning, and agricultural residue burning. The contrasting scenarios presented by these cities provide valuable perspectives on how different factors contribute to air pollution and offer potential pathways for intervention.        """)
+
+        st.write("""
+Beyond analyzing pollutant concentrations, this project applies advanced data analysis techniques, including Principal Component Analysis (PCA) and clustering algorithms, to reveal the underlying drivers and patterns of air pollution. PCA helps reduce the dimensionality of the data and simplifies complex relationships between pollutants, allowing for clearer insights into the principal factors contributing to air quality variations. Clustering techniques such as KMeans, hierarchical clustering, and DBSCAN are employed to identify natural groupings within the data, uncovering patterns related to geography, economic activity, and seasonal variations. These techniques offer a richer, data-driven perspective on how and why air pollution levels fluctuate across different regions and periods, enabling more effective targeting of mitigation strategies.
         """)
-
         st.write("""
-        Major pollutants of concern include particulate matter such as PM2.5 and PM10, which are small enough to penetrate deep into the lungs, posing severe respiratory risks. Gaseous pollutants like carbon monoxide (CO), nitrogen dioxide (NO2), sulfur dioxide (SO2), and ozone (O3) also play a critical role in affecting both human health and environmental sustainability. Prolonged exposure to these pollutants can lead to severe chronic conditions and exacerbate climate change effects. The intricate interplay between these pollutants, their sources, and environmental factors like weather conditions complicates efforts to mitigate their impact, making it crucial to employ data-driven approaches to understand the patterns of air pollution across regions.
+The temporal dynamics of air quality are another critical focus of this project. Understanding how pollution levels change over time and in response to policy measures, economic shifts, and seasonal variations provides actionable insights for public health officials and policymakers. Seasonal spikes in pollution due to agricultural practices, year-round industrial emissions, and other factors are explored in depth. Additionally, the interactions and synergies between different pollutants are investigated, as certain combinations can exacerbate their harmful effects. By offering a holistic, data-driven analysis of air quality trends, this project aims to inform urban planning, environmental policy, and public health interventions aimed at reducing exposure to air pollution and mitigating its harmful effects on human health and the environment.
         """)
-
-        st.write("""
-        In this project, air quality data from major cities around the world—including urban hubs like London, Delhi, Denver, and Beijing—are analyzed to uncover patterns in air pollution levels from 2007 to 2024. These cities represent diverse geographies and economic conditions, allowing for a comparative analysis of air pollution trends across different climates, industrial activities, and population densities. London, a city known for its industrial past but more recently focused on green energy, will offer insights into the challenges of controlling pollution from vehicular emissions and urban traffic. On the other hand, Delhi, one of the most polluted cities in the world, is heavily impacted by factors such as vehicular emissions, coal burning, and agricultural residue burning. Analyzing air quality trends across such diverse urban environments allows for a comprehensive understanding of how global air quality is evolving and what interventions may be most effective.
-        """)
-
-        st.write("""
-        Beyond merely describing pollutant concentrations, this project takes a deeper dive by applying advanced data analysis techniques like Principal Component Analysis (PCA) and various clustering algorithms to provide new insights into the drivers of air pollution. PCA is used to reduce the dimensionality of the data, allowing for a clearer understanding of the principal factors contributing to air quality variations. This technique helps in identifying underlying patterns that are often obscured in high-dimensional datasets, facilitating easier interpretation of complex relationships between pollutants. In addition to PCA, clustering techniques such as KMeans, hierarchical clustering, and DBSCAN are employed to identify natural groupings within the data. These methods will enable the discovery of distinct patterns related to geographic factors, economic activities, and seasonal variations, offering a richer, data-driven perspective on how and why pollution levels fluctuate across different regions and periods.        """)
-
-        st.write("""
-        An important aspect of this project is also to explore the temporal dynamics of air quality, investigating how pollution levels shift over time and in response to various policy changes, economic shifts, and environmental conditions. For instance, certain cities might experience seasonal spikes in pollution levels due to agricultural practices, while others could see consistent year-round challenges due to industrial activities. By identifying these patterns, the project aims to provide actionable insights for policymakers and public health officials. Understanding the interactions between different pollutants is particularly critical, as certain pollutants are known to amplify the harmful effects of others, creating synergies that make air pollution even more hazardous.        """)
-
-        st.write("""
-        By leveraging these machine learning and data analysis techniques, the project aims to offer a holistic perspective on global air quality trends. The insights gleaned from this analysis can serve as a valuable resource for shaping future urban planning strategies, guiding environmental policies, and improving public health interventions aimed at reducing air pollution exposure. As cities continue to grow and industries expand, the need for data-driven approaches to tackle air quality becomes ever more urgent. This project contributes to that effort by providing a nuanced understanding of air quality dynamics in some of the world’s most important urban centers.        """)
-
+        
         st.subheader("Motivation")
         st.write("""
-        The motivation behind this project is driven by the urgent need to better understand air pollution’s impact on urban environments. With millions of premature deaths attributed to air pollution globally, understanding the patterns and sources of pollution is critical to shaping policy responses and implementing mitigation strategies. This project seeks to contribute to this understanding by providing a detailed analysis of pollution data, uncovering insights into the main contributors, and identifying trends across different cities.
+        The motivation for this project arises from the urgent need to better understand and address air pollution's significant impact on urban populations worldwide. With millions of premature deaths linked to air pollution annually, identifying the patterns and sources of pollution is essential for effective policymaking and mitigation strategies. This project aims to provide a detailed analysis of air quality data, shedding light on the main contributors to pollution and uncovering trends across various cities.
+        """)
+
+        st.write("""
+        By applying advanced data analysis techniques, we seek to generate actionable insights that can guide public health interventions, environmental policies, and sustainable urban development efforts. Understanding how factors such as population density, economic activities, and geographic characteristics influence pollution levels will enable more targeted and effective approaches to reduce air pollution and protect public health.
         """)
 
         st.subheader("Previous Works on Air Quality Prediction Using Machine Learning")
@@ -106,6 +105,8 @@ elif main_tab == "Machine Learning":
         9. Can machine learning models predict future pollution levels based on past trends?
         10. How do air quality trends differ between highly industrialized and less industrialized cities?
         """)
+
+        st.image("Images/poll.jpg", use_column_width=False)
 
     elif sub_tab == "Data Gathering":
         st.subheader("Data Gathering")
@@ -957,57 +958,776 @@ elif main_tab == "Machine Learning":
 
 
     elif sub_tab == "Naïve Bayes":
-        st.subheader("Naïve Bayes")
-        st.image("Images/Naive1.png", caption="Naïve Bayes Classification Overview", use_column_width=True)
+        st.image("Images/Naive1.png", caption="Overview of Naïve Bayes Classification", use_column_width=True)
+        st.write("#### Overview")
         st.write("""
-        Naïve Bayes (NB) is a widely used machine learning algorithm that is particularly effective for classification tasks. It is based on **Bayes' Theorem**, 
-        which calculates the probability of a class given a set of observed features. NB assumes that features are conditionally independent, which, although not 
-        always true in real-world datasets, simplifies computation and allows for high scalability and efficiency. This characteristic makes Naïve Bayes highly 
-        effective for large datasets.
+            **Naïve Bayes (NB)** is a simple, yet powerful, machine learning algorithm used for classification tasks. It is based on **Bayes' Theorem**, which 
+            calculates the probability of a class based on prior knowledge of conditions related to that class. The key assumption of Naïve Bayes is that 
+            features are independent of each other given the class label. While this "naïve" assumption may not always hold true in real-world scenarios, it 
+            significantly simplifies calculations, making Naïve Bayes efficient and scalable, especially for large datasets.
+            
+            Naïve Bayes is widely used for tasks such as **text classification**, **spam detection**, **sentiment analysis**, and **recommendation systems** due 
+            to its simplicity, fast computation, and reasonable accuracy.
+        """)
+        # Display an overview image
+        st.image("Images/Naive2.png", caption="Bayes' Theorem", use_column_width=True)
 
-        NB is commonly used in applications such as **text classification, spam filtering, sentiment analysis**, and **recommendation systems** due to its 
-        simplicity and fast computation.
+        st.write("#### Variations of Naïve Bayes")
+        st.write("""
+            There are several variations of the Naïve Bayes algorithm, each tailored to different data types and use cases:
         """)
 
-        # Display image (replace with your actual image path)
-        st.image("Images/Naive2.png", caption="Naïve Bayes Classification Overview", use_column_width=True)
+        st.image("Images/Naive3.png", caption="Overview of Naïve Bayes Variations", use_column_width=True)
 
+        st.write("##### 1. Multinomial Naïve Bayes (MNB)")
         st.write("""
-            The Naïve Bayes algorithm has several variations tailored for different types of data. Each variation is suited to specific types of features and use cases.
+            - The **Multinomial Naïve Bayes** algorithm is best suited for **discrete data**. It is widely used in **text classification** tasks, where features 
+            represent word counts or frequencies.
+            - This variation assumes that features (e.g., word counts) follow a multinomial distribution, making it well-suited for scenarios like spam detection, 
+            where the frequency of words matters.
+            - **Smoothing in MNB**: To handle cases where a word appears in the test set but not in the training set (resulting in zero probabilities), 
+            **Laplace smoothing (also known as additive smoothing)** is applied. Smoothing ensures that zero probabilities are avoided, preventing the entire 
+            probability from becoming zero due to one missing feature.
         """)
 
-        st.subheader("Variations of Naïve Bayes")
-        st.markdown("### 1. Multinomial Naïve Bayes (MNB)")
+        st.write("##### 2. Gaussian Naïve Bayes (GNB)")
         st.write("""
-            - Best suited for **discrete data**, especially when features represent counts or frequencies.
-            - Frequently used in **text classification** tasks, where features correspond to the frequency of words or terms within a document. For example, it is 
-            widely used in **spam detection** by analyzing word occurrences in emails.
-            - Assumes **non-negative values** and models data using a multinomial distribution.
+            - **Gaussian Naïve Bayes** is designed for **continuous data** and assumes that the features follow a **Gaussian (normal) distribution**.
+            - This makes it suitable for datasets with continuous variables, such as measurements or sensor data.
+            - The algorithm calculates the probability of a feature belonging to a class using the **probability density function of the Gaussian distribution**.
         """)
 
-        st.markdown("### 2. Gaussian Naïve Bayes (GNB)")
+        st.write("##### 3. Bernoulli Naïve Bayes (BNB)")
         st.write("""
-            - Designed for **continuous data** and assumes that data follows a **Gaussian (normal) distribution**.
-            - Commonly applied to datasets where features are numerical, such as measurements, **sensor data**, or metrics.
-            - Estimates the likelihood of features belonging to a class using the **probability density function of the Gaussian distribution**.
+            - The **Bernoulli Naïve Bayes** algorithm is suited for **binary/boolean data**, where features take values of **1 (present)** or **0 (absent)**.
+            - It is often used for tasks where binary occurrence matters, such as determining whether specific words are present in a document.
+            - For example, it is commonly applied to text classification problems where the presence or absence of words (rather than their frequency) is used as 
+            a feature.
         """)
 
-        st.markdown("### 3. Bernoulli Naïve Bayes (BNB)")
+        st.write("##### 4. Categorical Naïve Bayes (CNB)")
         st.write("""
-            - Suitable for **binary data**, where features take values of **1 or 0**, indicating the presence or absence of a particular characteristic.
-            - Often used for tasks where binary occurrence matters, such as determining whether specific **words are present in a document** (e.g., keyword detection).
+            - The **Categorical Naïve Bayes** algorithm is specifically designed for **categorical features**. In this context, features are treated as 
+            categories with a finite number of possible values.
+            - This approach is useful for datasets where features represent distinct categories, such as colors, brands, or product categories.
         """)
 
-        st.image("Images/Naive3.png", caption="Naïve Bayes Classification Overview", use_column_width=True)
-
+        st.write("#### Summary and Comparisons")
         st.write("""
-            Naïve Bayes is a versatile and powerful tool for **classification problems** due to its computational efficiency, ease of implementation, 
-            and adaptability to different data types. Despite its simplicity, NB performs well in high-dimensional datasets and is robust, even when 
-            the independence assumption is somewhat violated. By tailoring the variation of Naïve Bayes to the specific structure and type of data, 
-            practitioners can achieve optimal results across a range of domains.
+            In summary, **Naïve Bayes** is a robust and versatile algorithm for **classification problems** due to its simplicity, computational efficiency, and 
+            adaptability to different data types. Despite its assumption of feature independence, it often performs well in practice, even when this assumption 
+            is violated.
+            
+            #### Comparison of Naïve Bayes Variations:
+            - **Multinomial NB**: Best for text data and word counts. Uses multinomial distribution. Laplace smoothing helps handle zero probabilities.
+            - **Gaussian NB**: Suitable for continuous data. Assumes normal distribution.
+            - **Bernoulli NB**: Ideal for binary features. Focuses on the presence/absence of features.
+            - **Categorical NB**: Designed for categorical features with finite possible values.
+            
+            By choosing the appropriate Naïve Bayes variation, the algorithm can be tailored to suit the nature of the dataset, achieving 
+            accurate and meaningful classification results.
         """)
 
+        st.write("#### Data Preparation for Naïve Bayes Models")
+    
+        st.write("""
+            Proper data preparation is essential for building effective Naïve Bayes models. Since Naïve Bayes is a supervised learning method, it requires labeled 
+            data, which means each instance in the dataset must be associated with a known class or target variable. The process includes cleaning data, splitting 
+            it into training and testing sets, and adapting the format based on the specific Naïve Bayes variation.
+        """)
+        
+        image_path_original = "Images/15.png" 
+        st.image(image_path_original, use_column_width=True, caption="Original Dataset")
 
+        st.write("""
+        - The dataset was transformed using `.pivot_table()` to reorganize pollutants as separate columns. This facilitated the analysis by clearly structuring pollutant values against unique locations and timestamps.
+        - Essential columns, including pollutant values (`pm25`, `pm10`, `no2`, `so2`, `o3`, `co`), were retained, and rows with missing data were removed to ensure data integrity.
+        - Columns such as `latitude` and `longitude` were excluded to streamline the dataset for pollutant-focused analysis.
+        - The dataframe index was reset to maintain a clean and sequential structure, simplifying subsequent data handling.
+    """)
+
+        st.image("Images/Naive4.png", caption="Dataset after Cleaning", use_column_width=True)
+
+        st.write("""
+        - Percentiles were calculated for `pm25` and `pm10` pollutants to divide the data into quantile-based categories. Specifically:
+            - The 33rd percentile (`pm25_33` and `pm10_33`) and the 66th percentile (`pm25_66` and `pm10_66`) values were computed.
+        - A function was defined to categorize air quality into three levels:
+            - **'Low'**: When both `pm25` and `pm10` values are below the 33rd percentile.
+            - **'Medium'**: When either `pm25` or `pm10` values fall between the 33rd and 66th percentiles.
+            - **'High'**: When `pm25` or `pm10` values exceed the 66th percentile.
+        - This categorization logic was applied to the dataset, resulting in a new target column, `air_quality_category`, which can serve as the classification label for modeling.
+        - The distribution of the newly created target variable was examined to ensure balanced classes for further analysis.
+    """)
+
+        st.image("Images/Naive5.png", caption="Target Variable Distribution", use_column_width=True)
+
+        st.write("""The dataset now looks like this:""")
+        st.image("Images/Naive6.png", caption="Prepared Dataset", use_column_width=True)
+
+        st.write("""Features:""")
+        st.image("Images/Naive7.png", caption="Prepared Dataset", use_column_width=True)
+
+        st.write("""Target Variable:""")
+        st.image("Images/Naive8.png", caption="Prepared Dataset", use_column_width=True)
+
+        st.write("""
+    - The target variable, `air_quality_category`, was transformed using label encoding to convert categorical values into numerical format for model compatibility.
+    - **Features and Target**: 
+        - **Features**: The predictor variables consist of pollutant levels (`pm25`, `pm10`, `no2`, `so2`, `o3`, `co`).
+        - **Target**: The encoded air quality category, `air_quality_category_encoded`.
+    - **Data Splitting**: 
+        - The data was divided into training and testing subsets using an 80-20 split ratio.
+        - **80% Training Set**: Used to train the models, capturing patterns and relationships within the data.
+        - **20% Testing Set**: Reserved for evaluating the model's performance on unseen data to ensure unbiased assessment and prevent overfitting.
+""")
+
+        st.image("Images/Naive9.png", caption="Dimensions of Training and Testing Datasets", use_column_width=True)
+        st.image("Images/Naive10.png", caption="X_train Dataset", use_column_width=True)
+        st.image("Images/Naive11.png", caption="X_test Dataset", use_column_width=True)
+        st.image("Images/Naive12.png", caption="y_train Dataset", use_column_width=True)
+        st.image("Images/Naive13.png", caption="y_test Dataset", use_column_width=True)
+
+        st.write("#### Importance of Creating a Disjoint Split")
+
+        st.write("""
+        ##### Prevention of Overfitting
+        Models trained on data learn specific patterns and relationships from the training dataset. If the same data is used for both training and evaluation, performance metrics can appear artificially inflated due to the model's prior exposure to the data. This situation, referred to as **data leakage**, results in overfitting, where the model may perform exceptionally well on known data but exhibit poor generalization on unseen data. A disjoint split ensures that evaluation occurs on data that has not been seen during training, thus providing an unbiased assessment of model performance and reducing overfitting risk.
+
+        ##### Assessment of Generalization Capability
+        Machine learning models must generalize effectively to new and previously unseen data. Using a disjoint test set simulates real-world scenarios where models are deployed to predict or classify novel inputs. For the air quality dataset, this approach enables a robust evaluation of the model's predictive ability on new pollutant measurements, including `pm25`, `pm10`, and other features.
+
+        ##### Validation of Model Robustness
+        When models are trained and evaluated on overlapping data, there is a risk that unique characteristics or outliers in the training data may be memorized. This behavior compromises the model's robustness and reliability. Ensuring a disjoint split allows the test set to serve as an unbiased benchmark for evaluating the model's predictions, confirming that predictions are driven by learned patterns rather than noise or specific training artifacts.
+        """)
+
+        # Link to code and data
+        st.markdown("#### Code and Data")
+        st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/Naïve%20Bayes.ipynb)")
+        st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)")
+
+        st.write("#### Results")
+        st.write("#### Gaussian Naive Bayes")
+        st.write("""
+            Gaussian Naive Bayes (GNB) is applied to classify data by assuming that the features follow a Gaussian distribution. 
+            This approach works well for continuous data and is used here to predict air quality categories based on features such as pollutant levels.
+            
+            The model's performance is evaluated using metrics such as precision, recall, f1-score, and overall accuracy. 
+        """)
+
+        # Display the confusion matrix plot (image)
+        st.image("Images/Naive14.png", caption="Gaussian Naive Bayes Classification Report and Confusion Matrix")
+        st.write("""
+    The Gaussian Naive Bayes (GNB) model was applied to predict air quality categories using various pollutant levels as features. 
+    The classification report provides key metrics for each category (0: Low, 1: Medium, 2: High air quality):
+
+    - **Accuracy**: The overall accuracy of the model is approximately 86%, indicating that 86% of the predictions made by the model were correct.
+    - **Precision, Recall, and F1-Score**: The model shows strong performance across all categories with balanced precision and recall values.
+    
+    The confusion matrix offers further insights into the model's performance:
+    - For **Category 0 (Low)**: The model correctly predicted 2,692 instances as Low, with 512 misclassified as High. 
+    - For **Category 1 (Medium)**: The model correctly predicted 2,560 instances as Medium, with 263 misclassified as High.
+    - For **Category 2 (High)**: The model correctly classified 4,970 instances as High but had some misclassifications, with 518 predicted as Low and 353 as Medium.
+
+    These results suggest that while the GNB model effectively classifies air quality, there is some degree of overlap and misclassification, 
+    particularly between Low and High categories. This might be attributed to similarities in pollutant levels near threshold values.
+""")
+        
+        st.write("#### Multinomial Naive Bayes")
+        st.write("""
+            Multinomial Naive Bayes (MNB) is specifically designed for handling discrete data and is often used for tasks where features represent counts or frequencies.
+            In this analysis, MNB was applied to predict air quality categories using pollutant levels treated as discrete data, aiming to understand how categorical features impact classification.
+        """)
+
+        # Display the confusion matrix plot for Multinomial Naive Bayes
+        st.image("Images/Naive15.png", caption="Multinomial Naive Bayes Classification Report and Confusion Matrix")
+
+        st.write("""
+            The classification report for the Multinomial Naive Bayes (MNB) model on this dataset indicates the following performance:
+
+            - **Accuracy**: The overall accuracy is approximately 40%, which is significantly lower than the Gaussian variant. This lower accuracy reflects MNB's limitations for this dataset, possibly due to its assumption of discrete features not aligning well with the continuous pollutant data.
+            - **Precision, Recall, and F1-Score**: The scores show notable variability across the categories, with relatively better precision for category 2 (High) but lower recall for the same category. Categories 0 (Low) and 1 (Medium) have similar but imbalanced metrics, suggesting challenges in correctly differentiating between classes.
+            
+            The confusion matrix reveals:
+            - **Category 0 (Low)**: Of 3,204 instances, 2,514 were correctly classified, but there was substantial misclassification into other categories.
+            - **Category 1 (Medium)**: Only 1,102 out of 2,823 instances were correctly identified, showing difficulty in predicting this class accurately.
+            - **Category 2 (High)**: 1,154 out of 5,841 instances were correctly classified, with a large number misclassified as Low or Medium.
+
+            The lower accuracy and higher misclassification rates highlight potential mismatches between the MNB assumptions and the characteristics of this dataset, such as pollutant levels not being purely discrete or count-based.
+        """)
+
+        st.write("#### Bernoulli Naive Bayes")
+        st.write("""
+            Bernoulli Naive Bayes (BNB) is tailored for binary/boolean data, focusing on features that indicate the presence (1) or absence (0) of a characteristic. 
+            It is often applied in scenarios such as text classification or detecting whether specific attributes exist within a dataset.
+        """)
+
+        # Display the confusion matrix plot for Bernoulli Naive Bayes
+        st.image("Images/Naive16.png", caption="Bernoulli Naive Bayes Classification Report and Confusion Matrix")
+
+        st.write("""
+            The performance of the Bernoulli Naive Bayes (BNB) model on this dataset yielded mixed results:
+
+            - **Accuracy**: The model achieved an accuracy of approximately 51%, which indicates moderate performance. Given the characteristics of the dataset, this could suggest that binary assumptions for pollutant data may not capture the full range of variability inherent in air quality classification.
+            - **Precision, Recall, and F1-Score**: The classification report demonstrates notable disparities in precision, recall, and F1-scores across the categories:
+                - **Category 0 (Low)**: Precision, recall, and F1-scores are very low, with no correct classifications. This reflects difficulty in accurately predicting this category due to limited binary patterns.
+                - **Category 1 (Medium)**: The model shows better performance compared to category 0, but with moderate precision and low recall. Many instances of this category were misclassified as high air quality.
+                - **Category 2 (High)**: This category saw a better recall but lower precision, highlighting the model's tendency to correctly identify many high air quality cases, albeit at the cost of incorrectly predicting others.
+
+            The confusion matrix shows:
+            - **Category 0** (Low): Most instances were misclassified, showing the limitation of binary assumptions for this category.
+            - **Category 1** (Medium): Moderate performance, with substantial misclassifications.
+            - **Category 2** (High): Comparatively better classification, although not perfect.
+
+            The Bernoulli Naive Bayes model’s reliance on binary features can limit its effectiveness for datasets like this, where continuous pollutant data may not fit well within strict presence/absence classifications.
+        """)
+
+        st.write("#### Comparison of Naive Bayes Models")
+
+        st.write("""
+            Three variations of the Naive Bayes algorithm were applied to classify air quality categories based on pollutant data. 
+            The models evaluated include Gaussian Naive Bayes, Multinomial Naive Bayes, and Bernoulli Naive Bayes. Each model 
+            leverages different assumptions about the data distribution, leading to varying performance outcomes.
+        """)
+
+        # Display the comparison bar chart
+        st.image("Images/Naive17.png", caption="Accuracy Comparison of Naive Bayes Models")
+
+        st.write("""
+            **Model Performance Comparison:**
+
+            - **Gaussian Naive Bayes** achieved the highest accuracy of 86.13%. This model assumes a Gaussian distribution for the data, making it highly suitable for continuous features such as pollutant levels in this dataset. The model demonstrated strong classification performance, as observed in the detailed classification report and confusion matrix.
+
+            - **Multinomial Naive Bayes** performed with an accuracy of 40.19%. This variation assumes that features represent counts or frequencies, which may not align optimally with the distribution of air quality data in this dataset. Consequently, it had difficulty capturing the underlying structure of the data.
+
+            - **Bernoulli Naive Bayes** achieved an intermediate accuracy of 51.41%. The binary representation of features in this model led to moderate performance, with challenges in accurately capturing the continuous nature of pollutant data. Despite its limitations, the model correctly classified a significant portion of the data compared to the Multinomial model.
+
+            The results indicate that the **Gaussian Naive Bayes** model outperforms the others for this dataset, likely due to its ability to handle continuous data effectively. The comparison emphasizes the importance of selecting a model that aligns with the distribution and nature of the dataset's features.
+        """)
+
+        st.subheader("Conclusion")
+
+        st.write("""
+            The Naive Bayes models provided valuable insights into the classification of air quality levels based on pollutant data:
+
+            **Model Performance:**
+
+            - **Gaussian Naive Bayes** achieved the highest accuracy of 86.13%, making it the most effective model for the continuous features in this dataset. This strong performance highlights that the distribution of pollutants aligns well with the Gaussian assumption, enabling effective classification of air quality categories.
+            
+            - **Bernoulli Naive Bayes** demonstrated moderate accuracy at 51.41%. While it can effectively handle binary data, it struggled with continuous features such as pollutant concentrations. However, it was still able to make meaningful classifications in some cases.
+            
+            - **Multinomial Naive Bayes** had the lowest accuracy at 40.19%. Its assumptions of discrete feature distribution limited its performance for this dataset, as it is better suited for count-based data like text classification. The misclassification rates reflect its difficulty in capturing the variability and continuous nature of air pollution data.
+
+            **Insights into Air Quality Classification:**
+
+            - The Gaussian NB model effectively differentiated between "High," "Medium," and "Low" air quality categories, suggesting that key pollutants such as PM2.5, PM10, and other pollutants strongly influence these classifications.
+            
+            - The confusion matrices revealed that certain categories were more frequently classified correctly, while others exhibited some misclassification, likely due to overlapping distributions of pollutant values.
+
+            **Predictive Applications:**
+
+            - The models can potentially be used to predict air quality levels in different cities based on real-time pollutant data, aiding decision-making for public health measures and pollution control strategies.
+            
+            - This modeling approach can help identify patterns in air quality trends, such as correlations between specific pollutants and classification categories, which can inform targeted policy interventions.
+
+            **Limitations and Future Work:**
+
+            - While Gaussian NB performed best, further model improvements could involve additional feature engineering to capture complex interactions between pollutants.
+            
+            - Exploring other machine learning models, such as decision trees or ensemble techniques, could provide a performance benchmark and potentially enhance accuracy.
+            
+            - Expanding the dataset with additional features such as meteorological data, population density, or geographical information may improve predictive capabilities and provide deeper insights into the factors driving air quality variations.
+
+            **Final Thoughts:**
+
+            Naive Bayes modeling provided a foundational understanding of air quality classification based on pollutant data, with the Gaussian Naive Bayes model emerging as the most effective variation. This analysis lays the groundwork for data-driven strategies and further exploration of air pollution control measures, with room for improvement through advanced modeling and expanded data features.
+        """)
+
+    elif sub_tab == "Decision Tree":
+        st.write("#### Overview")
+        st.write("""
+    Decision Trees (DTs) are a widely-used algorithm in machine learning for both **classification** and **regression** tasks. Their structure resembles a tree, with nodes representing decision points based on feature values, branches indicating outcomes, and leaf nodes representing final predictions (either class labels or continuous values). DTs excel due to their **interpretability, flexibility, and ability to handle non-linear relationships** in data. They are used across various domains, including **fraud detection, customer segmentation, and predictive maintenance**.
+
+    **Applications of Decision Trees:**
+    - **Classification**: Assigning categorical labels, such as identifying customer segments or predicting disease presence.
+    - **Regression**: Estimating continuous values, such as predicting sales figures or stock prices.
+    - **Feature Selection**: Determining the most influential variables for prediction.
+""")
+
+        # Display an example image of a basic decision tree
+        st.image("Images/Tree1.png", caption="Illustration of a Simple Decision Tree", use_column_width=True)
+
+        st.write("""
+            **How Decision Trees Are Trained:**
+            1. **Feature Selection for Splitting**: At each decision point (node), the algorithm selects the feature that best partitions the data according to a chosen criterion, such as **Gini impurity**, **Entropy**, or **Information Gain**.
+            2. **Recursive Partitioning**: The dataset is split repeatedly into subsets until stopping criteria are met (e.g., maximum depth or minimum samples per leaf).
+            3. **Leaf Node Assignment**: The final predictions at leaf nodes are based on majority class (classification) or average/median values (regression).
+
+            **How Predictions Are Made:**
+            - The trained Decision Tree evaluates input data by traversing from the root node to a leaf node based on the decision rules at each node.
+            - The path taken through the tree reflects the feature values in the input data.
+        """)
+
+        st.image("Images/Tree2.png", caption="Flowchart of Decision Tree Predictions", use_column_width=True)
+
+        st.write("""
+            **Understanding Splitting Metrics: Gini Impurity, Entropy, and Information Gain**
+
+            - **Gini Impurity**: Measures how often a randomly chosen element would be incorrectly classified if it was randomly labeled based on the distribution of labels in the node. Lower Gini values indicate "purer" nodes.
+            - Example: In a binary split where 90% of the samples belong to one class, the Gini impurity is low, suggesting a good split.
+
+            - **Entropy**: Represents the degree of randomness or disorder in the data. Lower entropy values signify less randomness and purer splits.
+            - Example: If a node contains samples from only one class, the entropy is zero (pure node).
+
+            - **Information Gain**: Quantifies the reduction in impurity after a split and is calculated as the difference between the impurity of the parent node and the weighted impurity of child nodes.
+            - Example: A high information gain indicates that a split has effectively separated the data, improving the model's predictive accuracy.
+        """)
+
+        st.write("""
+    **Example Calculation Using Gini Impurity and Information Gain:**
+
+    Consider a dataset with 120 samples divided into three classes:
+    - Class X: 60 samples
+    - Class Y: 40 samples
+    - Class Z: 20 samples
+
+    **Step 1: Calculate Gini Impurity for the Parent Node**
+
+    - Proportion of Class X: 0.50
+    - Proportion of Class Y: 0.33
+    - Proportion of Class Z: 0.17
+
+    The Gini Impurity for the parent node is calculated as:
+    \n
+    `Gini_Parent = 1 - (0.50^2 + 0.33^2 + 0.17^2) = 0.611`
+
+    **Step 2: Perform a Split**
+
+    Assume we split the data as follows:
+    - Left Node: 50 samples (30 from Class X, 15 from Class Y, 5 from Class Z)
+    - Right Node: 70 samples (30 from Class X, 25 from Class Y, 15 from Class Z)
+
+    **Step 3: Calculate Gini Impurity for Each Child Node**
+
+    - Left Node:
+      - Proportion of Class X: 0.60
+      - Proportion of Class Y: 0.30
+      - Proportion of Class Z: 0.10
+
+      \n
+      `Gini_Left = 1 - (0.60^2 + 0.30^2 + 0.10^2) = 0.48`
+
+    - Right Node:
+      - Proportion of Class X: 0.43
+      - Proportion of Class Y: 0.36
+      - Proportion of Class Z: 0.21
+
+      \n
+      `Gini_Right = 1 - (0.43^2 + 0.36^2 + 0.21^2) = 0.623`
+
+    **Step 4: Calculate the Weighted Average Gini Impurity of the Child Nodes**
+
+    \n
+    `Gini_Children = (50/120) * 0.48 + (70/120) * 0.623 = 0.561`
+
+    **Step 5: Calculate Information Gain**
+
+    \n
+    `Information Gain = Gini_Parent - Gini_Children = 0.611 - 0.561 = 0.05`
+
+    This example illustrates how splitting the data into child nodes can reduce the overall impurity, thereby improving the model's classification ability. Information Gain measures the effectiveness of a split, with higher values indicating more meaningful separations of data.
+""")
+        st.write("""
+        **Why Decision Trees Can Grow Indefinitely**
+
+        Decision Trees have the potential to continue splitting the data without limit due to:
+
+        - **Identifying New Feature Combinations and Thresholds:** Trees can explore various combinations of features and find different thresholds for splitting, resulting in deeper subdivisions of the data.
+        - **Pursuing Small Differences in Impurity:** Even minute reductions in impurity can prompt further splits, causing the tree to grow increasingly complex.
+
+        While this flexibility allows for a highly tailored model, it may also lead to **overfitting**, where the tree becomes too specific to the training data and fails to generalize to new data. To address this issue, practical Decision Tree implementations often use parameters such as:
+        
+        - `max_depth`: Limits the maximum depth of the tree.
+        - `min_samples_split`: Sets the minimum number of samples required to split a node.
+        - `min_samples_leaf`: Specifies the minimum number of samples that must be present in a leaf node.
+
+        By controlling these parameters, it is possible to balance model complexity and performance, avoiding overfitting while maintaining predictive accuracy.
+    """)
+
+        st.write("#### Data Preparation")
+    
+        st.write("""
+            Proper data preparation is crucial for building effective Decision Tree models. As a supervised learning method, Decision Trees require labeled data, meaning 
+    each instance in the dataset must be associated with a known target or output variable. The preparation process involves cleaning the data, splitting it into 
+    training and testing sets, and ensuring features are appropriately formatted for optimal decision-making at each node of the tree. This preparation enables 
+    the model to learn and make accurate predictions based on feature splits and hierarchies.
+        """)
+        
+        image_path_original = "Images/15.png" 
+        st.image(image_path_original, use_column_width=True, caption="Original Dataset")
+
+        st.write("""
+        - The dataset was transformed using `.pivot_table()` to reorganize pollutants as separate columns. This facilitated the analysis by clearly structuring pollutant values against unique locations and timestamps.
+        - Essential columns, including pollutant values (`pm25`, `pm10`, `no2`, `so2`, `o3`, `co`), were retained, and rows with missing data were removed to ensure data integrity.
+        - Columns such as `latitude` and `longitude` were excluded to streamline the dataset for pollutant-focused analysis.
+        - The dataframe index was reset to maintain a clean and sequential structure, simplifying subsequent data handling.
+    """)
+
+        st.image("Images/Naive4.png", caption="Dataset after Cleaning", use_column_width=True)
+
+        st.write("""
+        - Percentiles were calculated for `pm25` and `pm10` pollutants to divide the data into quantile-based categories. Specifically:
+            - The 33rd percentile (`pm25_33` and `pm10_33`) and the 66th percentile (`pm25_66` and `pm10_66`) values were computed.
+        - A function was defined to categorize air quality into three levels:
+            - **'Low'**: When both `pm25` and `pm10` values are below the 33rd percentile.
+            - **'Medium'**: When either `pm25` or `pm10` values fall between the 33rd and 66th percentiles.
+            - **'High'**: When `pm25` or `pm10` values exceed the 66th percentile.
+        - This categorization logic was applied to the dataset, resulting in a new target column, `air_quality_category`, which can serve as the classification label for modeling.
+        - The distribution of the newly created target variable was examined to ensure balanced classes for further analysis.
+    """)
+
+        st.image("Images/Naive5.png", caption="Target Variable Distribution", use_column_width=True)
+
+        st.write("""The dataset now looks like this:""")
+        st.image("Images/Naive6.png", caption="Prepared Dataset", use_column_width=True)
+
+        st.write("""Features:""")
+        st.image("Images/Naive7.png", caption="Features", use_column_width=True)
+
+        st.write("""Target Variable:""")
+        st.image("Images/Naive8.png", caption="Target", use_column_width=True)
+
+        st.write("""
+    - The target variable, `air_quality_category`, was transformed using label encoding to convert categorical values into numerical format for model compatibility.
+    - **Features and Target**: 
+        - **Features**: The predictor variables consist of pollutant levels (`pm25`, `pm10`, `no2`, `so2`, `o3`, `co`).
+        - **Target**: The encoded air quality category, `air_quality_category_encoded`.
+    - **Data Splitting**: 
+        - The data was divided into training and testing subsets using an 80-20 split ratio.
+        - **80% Training Set**: Used to train the models, capturing patterns and relationships within the data.
+        - **20% Testing Set**: Reserved for evaluating the model's performance on unseen data to ensure unbiased assessment and prevent overfitting.
+""")
+
+        st.image("Images/Naive9.png", caption="Dimensions of Training and Testing Datasets", use_column_width=True)
+        st.image("Images/Naive10.png", caption="X_train Dataset", use_column_width=True)
+        st.image("Images/Naive11.png", caption="X_test Dataset", use_column_width=True)
+        st.image("Images/Naive12.png", caption="y_train Dataset", use_column_width=True)
+        st.image("Images/Naive13.png", caption="y_test Dataset", use_column_width=True)
+
+        # Link to code and data
+        st.markdown("#### Code and Data")
+        st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/Naïve%20Bayes.ipynb)")
+        st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)")
+
+        st.write("#### Results")
+        st.write("""
+        The Decision Tree model was applied to the air quality dataset to classify air quality into three categories: Low, Medium, and High. The model operates by 
+        recursively splitting data based on feature values (e.g., `pm25`, `pm10`), with each split creating decision nodes and leaf nodes that represent class predictions.
+        Decision Trees are effective for modeling complex patterns while remaining interpretable through visual representation.
+
+        #### Model Configurations and Results
+        The Decision Tree was evaluated at varying depths to assess its impact on model accuracy and complexity. The configurations and observations are summarized as follows:
+
+        1. **Max Depth = 3**: 
+            - This shallow tree structure achieved an accuracy of approximately 99.39%.
+            - The model captured essential patterns with a limited number of splits, resulting in high interpretability.
+            - However, certain nuances in the data were not captured, leading to some misclassifications, as seen in the confusion matrix.
+
+        2. **Max Depth = 5**: 
+            - The model accuracy increased to 99.98%.
+            - This configuration balanced capturing intricate decision boundaries while maintaining interpretability.
+            - The reduced misclassifications indicate that this depth allowed for better differentiation among the air quality categories without excessive complexity.
+
+        3. **Max Depth = 7**: 
+            - Further increasing the depth slightly improved accuracy to 99.99%.
+            - The tree became more complex with additional splits, but this added complexity provided minimal performance gains and reduced interpretability.
+
+        ### Visualizations and Confusion Matrices
+        The following visualizations and confusion matrices depict the structure and performance of the Decision Tree models at different depths:
+
+        - **Decision Tree (Max Depth = 3)**
+        """)
+        st.image("Images/Tree3.png", caption="Decision Tree with Max Depth = 3")
+
+        st.write("""
+        - **Decision Tree (Max Depth = 5)**
+        """)
+        st.image("Images/Tree4.png", caption="Decision Tree with Max Depth = 5")
+
+        st.write("""
+        - **Decision Tree (Max Depth = 7)**
+        """)
+        st.image("Images/Tree5.png", caption="Decision Tree with Max Depth = 7")
+
+        st.write("""
+        #### Analysis and Key Observations
+        - Increasing the tree depth enhanced model accuracy due to improved handling of complex patterns within the data.
+        - However, as the depth increased, the added complexity offered diminishing returns, demonstrating the trade-off between interpretability and predictive accuracy.
+        - Proper tuning of depth parameters is critical to avoid overfitting, as excessively deep trees may memorize training data instead of generalizing to new inputs.
+        - Decision Trees inherently have the potential for infinite growth by continuing to split data into finer distinctions. While this can increase accuracy on the training set, it often results in overfitting and diminished generalization to unseen data. Constraining growth through parameters such as maximum depth, minimum samples per split, and minimum leaf nodes can mitigate this risk and ensure robust, interpretable models.
+
+        The results highlight the effectiveness of Decision Trees for classification tasks, demonstrating a balance between complexity and predictive accuracy when properly tuned.
+        """)
+
+        st.write("#### Conclusion")
+
+        st.markdown("##### 1. Key Learnings")
+        st.write("""
+        The application of Decision Tree models to the air quality classification dataset yielded important insights into the prediction of air quality categories 
+        (Low, Medium, High) based on pollutant concentration data.
+
+        **Feature Importance**:  
+        - Pollutant concentrations, such as `pm25` and `pm10`, were consistently the most significant predictors of air quality categories, appearing as key decision nodes across different depths.  
+        - The consistent importance of these features underscores their strong influence in determining air quality levels.
+
+        **Model Performance**:  
+        - Decision Tree models exhibited high accuracy across various configurations, underscoring their suitability for this classification task.  
+        - The model with a maximum depth of 3 achieved approximately 99.39% accuracy, striking a balance between simplicity and performance.  
+        - Models with greater depths (Max Depth = 5 and Max Depth = 7) achieved near-perfect accuracy (~99.98% and ~99.99%, respectively), highlighting the capacity to capture intricate patterns at the cost of interpretability.
+
+        **Role of Tree Depth**:  
+        - **Max Depth = 3**: Provided a simple, interpretable tree structure but with limited granularity, resulting in a few misclassifications.  
+        - **Max Depth = 5**: Achieved a balance between complexity and classification performance, minimizing misclassifications while remaining interpretable.  
+        - **Max Depth = 7**: Maintained high accuracy but introduced additional complexity, which did not yield further performance gains and increased risk of overfitting.
+
+        **Classification Insights**:  
+        - The Decision Tree models effectively distinguished between Low, Medium, and High air quality categories.  
+        - Deeper trees helped resolve misclassifications observed with shallow trees, highlighting the need for depth tuning to achieve optimal results.
+        """)
+
+        st.markdown("##### 2. Predictive Applications")
+        st.write("""
+        The predictive capabilities of the Decision Tree models provide several real-world applications:
+
+        **Environmental Monitoring**:  
+        - The model can be used to predict air quality in real-time, allowing for proactive interventions and public health advisories.  
+        - This predictive capability can be used to identify regions with poor air quality and guide targeted mitigation measures.
+
+        **Policy and Regulatory Decision-Making**:  
+        - Insights into key pollutant predictors can inform the development of regulatory policies aimed at reducing specific pollutant levels such as `pm25` and `pm10`.
+
+        **Urban Planning and Public Health Initiatives**:  
+        - Understanding the factors influencing air pollution enables strategic planning to minimize exposure through initiatives such as green zones, optimized traffic flows, and pollution control strategies.
+        """)
+
+        st.markdown("##### 3. Limitations")
+        st.write("""
+        Despite the high accuracy and valuable insights provided by the Decision Tree models, some limitations were observed:
+
+        **Model Overfitting**:  
+        - Increasing the depth beyond a certain level did not yield significant improvements, indicating a risk of overfitting and necessitating careful model complexity management.
+
+        **Feature Engineering**:  
+        - The performance of the models relied solely on available pollutant features. Incorporating additional features such as weather patterns or urban activity data could improve predictive accuracy.
+
+        **Scalability**:  
+        - With larger datasets or more complex feature sets, Decision Trees may become less interpretable and computationally intensive, necessitating further optimization techniques.
+        """)
+
+        st.markdown("##### 4. Future Work")
+        st.write("""
+        To enhance the findings of this analysis, several future directions are recommended:
+
+        **Testing Ensemble Methods**:  
+        - Employing ensemble techniques like Random Forests and Gradient Boosting to improve classification accuracy and minimize overfitting risks.
+
+        **Incorporating Additional Features**:  
+        - Integrating external data such as meteorological conditions, industrial activities, or urban density to enrich predictive capabilities.
+
+        **Exploring Non-linear Relationships**:  
+        - Using feature transformations or interaction terms to capture more complex patterns.
+
+        **Cross-Validation and External Validation**:  
+        - Testing on unseen datasets to assess model robustness and generalizability.
+        """)
+
+        st.markdown("##### 5. Final Thoughts")
+        st.write("""
+        The Decision Tree models highlighted the critical role of pollutants like `pm25` and `pm10` in predicting air quality levels. Balancing model depth is crucial to ensure accurate predictions without overfitting. This data-driven approach has the potential to inform policies, guide public health measures, and enhance environmental monitoring strategies for air quality improvement.
+        """)
+
+    elif sub_tab == "Regression":
+        st.write("#### Overview")
+        st.markdown("### Linear Regression")
+        st.write("""
+        Linear regression is a statistical approach used to model the relationship between a dependent variable (target) and one or more independent variables (predictors) by fitting a linear equation to the observed data. The equation takes the form: **y = β0 + β1x1 + β2x2 + ... + βnxn + ε**, where **y** is the predicted output, **β0** is the intercept, **β1, β2, ..., βn** are coefficients, **x1, x2, ..., xn** are input features, and **ε** represents the error term. Linear regression aims to minimize the sum of squared residuals (differences between observed and predicted values). It is widely used in predictive modeling and forecasting.
+        """)
+
+        # Logistic Regression
+        st.markdown("### Logistic Regression")
+        st.write("""
+        Logistic regression is used for modeling binary outcomes (e.g., 0/1, Yes/No). Unlike linear regression, it predicts the probability that an instance belongs to a specific class. It uses the **sigmoid function**, defined as **f(x) = 1 / (1 + e^(-z))**, to map predictions to probabilities between 0 and 1. Here, **z** is the linear combination of input features and their weights (similar to linear regression). Logistic regression finds application in classification tasks, such as determining whether an email is spam or predicting disease presence.
+        """)
+        st.image("Images/Reg1.jpg", caption="Linear and Logistic Regression")
+
+        # Similarities and Differences
+        st.markdown("### Similarities and Differences Between Linear and Logistic Regression")
+        st.write("""
+        Linear and logistic regression both examine relationships between dependent and independent variables. However, linear regression predicts continuous values, whereas logistic regression predicts probabilities for categorical outcomes. Linear regression minimizes residual error using ordinary least squares, while logistic regression employs maximum likelihood estimation to optimize the fit of log-odds. Linear regression models data using a straight line, while logistic regression uses a sigmoid curve to represent probabilities for binary classification.
+        """)
+
+        # Use of Sigmoid Function
+        st.markdown("### Use of Sigmoid Function in Logistic Regression")
+        st.write("""
+        Logistic regression uses the sigmoid function to map predicted values to probabilities between 0 and 1. The sigmoid function transforms linear predictions into a probability distribution, making it suitable for binary classification problems. Mathematically, the sigmoid function is represented as **f(x) = 1 / (1 + e^(-x))**. This transformation allows logistic regression to output probabilities, making it ideal for applications where a probabilistic interpretation of class membership is required.
+        """)
+
+        # Maximum Likelihood Estimation
+        st.markdown("### Maximum Likelihood Estimation in Logistic Regression")
+        st.write("""
+        Maximum likelihood estimation (MLE) is a technique used in logistic regression to find the best-fitting parameters for the model. It aims to maximize the likelihood function, which represents the probability of the observed data given a set of parameters. By iteratively adjusting coefficients, MLE seeks to find the parameter values that make the observed data most probable. This approach ensures that the logistic regression model accurately predicts class probabilities for the given data.
+        """)
+
+        st.write("#### Data Preparation")
+    
+        st.write("""
+Proper data preparation is essential for building effective regression models. Since regression is a supervised learning method, it requires labeled data, where each instance in the dataset is associated with a known target or output variable. The data preparation process involves cleaning and preprocessing data, handling missing values, encoding categorical variables if needed, and normalizing or scaling features. The data is then split into training and testing sets to ensure unbiased evaluation of the model's performance. This preparation is crucial for accurate predictions, as it enables the regression model to learn relationships between the input features and the target variable in a meaningful way.
+""")
+        
+        image_path_original = "Images/15.png" 
+        st.image(image_path_original, use_column_width=True, caption="Original Dataset")
+
+        st.write("""
+        - The dataset was transformed using `.pivot_table()` to reorganize pollutants as separate columns. This facilitated the analysis by clearly structuring pollutant values against unique locations and timestamps.
+        - Essential columns, including pollutant values (`pm25`, `pm10`, `no2`, `so2`, `o3`, `co`), were retained, and rows with missing data were removed to ensure data integrity.
+        - Columns such as `latitude` and `longitude` were excluded to streamline the dataset for pollutant-focused analysis.
+        - The dataframe index was reset to maintain a clean and sequential structure, simplifying subsequent data handling.
+    """)
+
+        st.image("Images/Naive4.png", caption="Dataset after Cleaning", use_column_width=True)
+        st.write("""
+    To prepare the dataset for binary classification of air quality levels, median values of the `pm25` and `pm10` pollutants were calculated as thresholds. This step enables segmentation into 'high' and 'low' air quality categories, facilitating binary classification modeling.
+
+    **Steps Taken**:
+    
+    - **Threshold Calculation**: The median values for `pm25` and `pm10` were computed to serve as reference points. These medians act as the thresholds to categorize air quality into two classes.
+    
+    - **Binary Categorization**: A function was created to assign a binary label to each row in the dataset. If both `pm25` and `pm10` values exceed their median thresholds, the air quality is labeled as '1' (high). Otherwise, it is labeled as '0' (low).
+    
+    - **Class Distribution Check**: The distribution of the newly created binary target variable, `air_quality_binary`, provides insights into the balance of high and low air quality samples. This is essential for ensuring that subsequent models are appropriately trained and evaluated.
+""")
+        st.image("Images/Reg2.png", caption="Distribution of Air Quality Binary Classes")
+
+        st.write("""The dataset now looks like this:""")
+        st.image("Images/Reg3.png", caption="Prepared Dataset", use_column_width=True)
+
+        st.write("""Features:""")
+        st.image("Images/Reg4.png", caption="Features", use_column_width=True)
+
+        st.write("""Target Variable:""")
+        st.image("Images/Reg5.png", caption="Target", use_column_width=True)
+
+        st.write("""
+    Before applying logistic regression, it is important to standardize the features to ensure that they have a mean of 0 and a standard deviation of 1. This 
+    step is particularly crucial for models like logistic regression that use optimization algorithms sensitive to feature scaling. Standardization helps in 
+    faster convergence of the algorithm and prevents features with larger magnitudes from dominating those with smaller values.
+
+    The `StandardScaler` from `sklearn.preprocessing` was used to transform all feature values to a standardized scale.
+
+    Next, the dataset was divided into training and testing subsets using a 70-30 split ratio. The training set (70%) was used to train the logistic regression 
+    model, while the testing set (30%) was reserved for evaluating its performance. This ensures that the model's accuracy and generalization capabilities are 
+    assessed on data that it has not previously encountered.
+""")
+    
+        st.image("Images/Reg6.png", caption="X_train Dataset", use_column_width=True)
+        st.image("Images/Reg7.png", caption="X_test Dataset", use_column_width=True)
+        st.image("Images/Reg8.png", caption="y_train Dataset", use_column_width=True)
+        st.image("Images/Reg9.png", caption="y_test Dataset", use_column_width=True)
+
+        # Link to code and data
+        st.markdown("#### Code and Data")
+        st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/Regression.ipynb)")
+        st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)")
+
+        st.write("#### Results")
+        st.image("Images/Reg10.png", caption="Accuracy and Confusion Matrices", use_column_width=True)
+        st.write("""
+    #### Logistic Regression Results
+    The Logistic Regression model was applied to predict binary air quality categories using various features. This approach models a linear decision boundary 
+    and uses the logistic (sigmoid) function to estimate class probabilities.
+
+    **Accuracy**: 93.24%  
+    The high accuracy demonstrates the model's ability to classify most instances correctly, suggesting a strong fit with minimal misclassifications.
+
+    **Confusion Matrix**:
+    - **True Positives (TP)**: The model correctly classified 10,346 instances of Class 0 (low air quality).
+    - **True Negatives (TN)**: It accurately predicted 6,253 instances of Class 1 (high air quality).
+    - **False Positives (FP)**: There were 522 instances incorrectly classified as Class 1 when they actually belonged to Class 0.
+    - **False Negatives (FN)**: 681 instances were predicted as Class 0 when they truly belonged to Class 1.
+    This indicates a small amount of misclassification, demonstrating high precision and recall, especially for Class 1 predictions.""")
+        
+        st.write("""
+    #### Multinomial Naive Bayes Results
+    Multinomial Naive Bayes (MNB) was used as a comparative model for classifying air quality categories. Given MNB's assumption of non-negative values, the data 
+    was adjusted accordingly.
+
+    **Accuracy**: 86.43%  
+    This accuracy is somewhat lower than Logistic Regression, reflecting its limitations given the data's distribution. However, it remains a valid approach for 
+    classification.
+
+    **Confusion Matrix**:  
+    - **TP**: 10,005 instances of Class 0 were correctly identified.
+    - **TN**: The model correctly predicted 5,382 instances of Class 1.
+    - **FP**: 863 instances were incorrectly classified as Class 1 instead of Class 0.
+    - **FN**: 1,552 instances were predicted as Class 0 instead of being correctly identified as Class 1.
+    The higher number of false negatives and false positives suggests that this model struggles more with correctly differentiating between the two classes compared to Logistic Regression, potentially due to data distribution characteristics that do not align as well with Naive Bayes' assumptions.""")
+        st.image("Images/Reg12.png", caption="Confusion Matrices", use_column_width=True)
+        st.write("""In comparison, Logistic Regression demonstrates better overall performance than Multinomial Naive Bayes for this dataset. This can be attributed to the 
+    linear separation characteristics and data distribution, highlighting Logistic Regression's suitability for the given features.
+""")
+        st.write("""
+    ### Model Accuracy Comparison
+    This bar chart compares the accuracy of Logistic Regression and Multinomial Naive Bayes models on the air quality prediction task. 
+
+    - **Logistic Regression** achieved a higher accuracy of 93.24%, indicating its strong performance and suitability for this dataset.
+    - **Multinomial Naive Bayes** achieved an accuracy of 86.43%, showing good predictive capabilities but falling slightly behind Logistic Regression.
+
+    The difference in accuracies highlights the strengths of Logistic Regression in handling this particular dataset, possibly due to its linear decision boundary and handling of feature distributions, whereas the assumptions of Multinomial Naive Bayes may have been less aligned with the data characteristics.
+""")
+        st.image("Images/Reg11.png", caption="Accuracy Comparison Between Logistic Regression and Multinomial Naive Bayes Models")
+
+        st.write("""
+    ### ROC Curve Comparison
+    The Receiver Operating Characteristic (ROC) curve illustrates the performance of the Logistic Regression and Multinomial Naive Bayes models by comparing 
+    the True Positive Rate (TPR) against the False Positive Rate (FPR) at various threshold levels.
+
+    **Logistic Regression** achieved an Area Under the Curve (AUC) of 0.99, indicating a very strong ability to distinguish between the classes. The curve 
+    rises quickly towards the top left, reflecting high sensitivity and low false positive rates.
+
+    **Multinomial Naive Bayes** achieved an AUC of 0.87, demonstrating good performance, though not as strong as Logistic Regression. This suggests that 
+    while MNB can classify effectively, it does so with slightly more overlap between classes compared to Logistic Regression.
+
+    The diagonal dashed line represents a random guess baseline (AUC = 0.5). Both models outperform this baseline, indicating their effectiveness in predicting 
+    the target variable.
+""")
+        st.image("Images/Reg13.png", caption="ROC Curve Comparison Between Logistic Regression and Multinomial Naive Bayes Models")
+
+        st.write("""
+    #### Conclusion and Key Learnings
+
+    1. **Model Performance Insights**:
+       - Logistic Regression demonstrated a strong ability to distinguish between air quality categories, achieving a high accuracy of 93.24%. This model 
+         efficiently utilized linear decision boundaries to separate classes, as reflected by its strong performance metrics and high Area Under the Curve (AUC) 
+         score of 0.99. This suggests that a linear relationship between features and classes is well captured by this model.
+       - Multinomial Naive Bayes, while achieving a respectable accuracy of 86.43%, did not perform as well as Logistic Regression. Its performance was hindered 
+         by overlapping feature distributions and assumptions regarding non-negative input values. Nonetheless, it demonstrated a solid ability to categorize air 
+         quality, reflected by its AUC score of 0.87.
+
+    2. **Classification Insights**:
+       - The results from Logistic Regression indicate that the data's linear separability plays a significant role in accurate classification. The low rate of 
+         false positives and false negatives further highlights the model's effectiveness in discriminating between air quality categories.
+       - The performance of Multinomial Naive Bayes, although lower, reveals useful patterns in the data. It particularly struggled with misclassifying instances 
+         near decision boundaries, suggesting that additional feature transformations or non-linear modeling approaches may yield better results.
+
+    3. **Predictive Applications**:
+       - Logistic Regression's robust performance implies that it can be effectively used for predicting air quality levels in practical scenarios, providing 
+         reliable probability estimates for each class.
+       - Multinomial Naive Bayes, due to its efficiency with text-like and discrete data, offers value for applications requiring simpler probabilistic outputs 
+         despite some classification limitations in this context.
+
+    4. **Future Improvements**:
+       - Exploring feature engineering techniques or interaction terms may further enhance model performance.
+       - Testing other classification models or ensemble techniques could address limitations in distinguishing overlapping class distributions.
+""")
 
     elif sub_tab == "Conclusions":
         st.subheader("Conclusions")
