@@ -37,7 +37,7 @@ elif main_tab == "Machine Learning":
 
     # Nested sub-tabs under Machine Learning, also in the sidebar
     with st.sidebar:
-        sub_tab = st.selectbox("Choose a topic", ["Introduction", "Data Gathering", "Data Prep/EDA", "PCA", "Clustering", "Association Rule Mining", "Conclusions"])
+        sub_tab = st.selectbox("Choose a topic", ["Introduction", "Data Gathering", "Data Prep/EDA", "PCA", "Clustering", "Association Rule Mining", "Naïve Bayes", "Decision Tree", "Regression", "Conclusions"])
 
     if sub_tab == "Introduction":
         st.subheader("Introduction")
@@ -954,6 +954,60 @@ elif main_tab == "Machine Learning":
 
         In conclusion, the ARM analysis provided essential insights into pollutant interactions and co-occurrences, revealing patterns that can guide more effective air quality interventions. By targeting the most frequent and impactful pollutant combinations, stakeholders can create more robust environmental policies and public health strategies to reduce air pollution and protect communities from the adverse effects of poor air quality.
         """)
+
+
+    elif sub_tab == "Naïve Bayes":
+        st.subheader("Naïve Bayes")
+        st.image("Images/Naive1.png", caption="Naïve Bayes Classification Overview", use_column_width=True)
+        st.write("""
+        Naïve Bayes (NB) is a widely used machine learning algorithm that is particularly effective for classification tasks. It is based on **Bayes' Theorem**, 
+        which calculates the probability of a class given a set of observed features. NB assumes that features are conditionally independent, which, although not 
+        always true in real-world datasets, simplifies computation and allows for high scalability and efficiency. This characteristic makes Naïve Bayes highly 
+        effective for large datasets.
+
+        NB is commonly used in applications such as **text classification, spam filtering, sentiment analysis**, and **recommendation systems** due to its 
+        simplicity and fast computation.
+        """)
+
+        # Display image (replace with your actual image path)
+        st.image("Images/Naive2.png", caption="Naïve Bayes Classification Overview", use_column_width=True)
+
+        st.write("""
+            The Naïve Bayes algorithm has several variations tailored for different types of data. Each variation is suited to specific types of features and use cases.
+        """)
+
+        st.subheader("Variations of Naïve Bayes")
+        st.markdown("### 1. Multinomial Naïve Bayes (MNB)")
+        st.write("""
+            - Best suited for **discrete data**, especially when features represent counts or frequencies.
+            - Frequently used in **text classification** tasks, where features correspond to the frequency of words or terms within a document. For example, it is 
+            widely used in **spam detection** by analyzing word occurrences in emails.
+            - Assumes **non-negative values** and models data using a multinomial distribution.
+        """)
+
+        st.markdown("### 2. Gaussian Naïve Bayes (GNB)")
+        st.write("""
+            - Designed for **continuous data** and assumes that data follows a **Gaussian (normal) distribution**.
+            - Commonly applied to datasets where features are numerical, such as measurements, **sensor data**, or metrics.
+            - Estimates the likelihood of features belonging to a class using the **probability density function of the Gaussian distribution**.
+        """)
+
+        st.markdown("### 3. Bernoulli Naïve Bayes (BNB)")
+        st.write("""
+            - Suitable for **binary data**, where features take values of **1 or 0**, indicating the presence or absence of a particular characteristic.
+            - Often used for tasks where binary occurrence matters, such as determining whether specific **words are present in a document** (e.g., keyword detection).
+        """)
+
+        st.image("Images/Naive3.png", caption="Naïve Bayes Classification Overview", use_column_width=True)
+
+        st.write("""
+            Naïve Bayes is a versatile and powerful tool for **classification problems** due to its computational efficiency, ease of implementation, 
+            and adaptability to different data types. Despite its simplicity, NB performs well in high-dimensional datasets and is robust, even when 
+            the independence assumption is somewhat violated. By tailoring the variation of Naïve Bayes to the specific structure and type of data, 
+            practitioners can achieve optimal results across a range of domains.
+        """)
+
+
 
     elif sub_tab == "Conclusions":
         st.subheader("Conclusions")
