@@ -37,33 +37,37 @@ elif main_tab == "Machine Learning":
 
     # Nested sub-tabs under Machine Learning, also in the sidebar
     with st.sidebar:
-        sub_tab = st.selectbox("Choose a topic", ["Introduction", "Data Gathering", "Data Prep/EDA", "PCA", "Clustering", "Association Rule Mining", "Naïve Bayes", "Decision Tree", "Regression", "Conclusions"])
+        sub_tab = st.selectbox("Choose a topic", ["Introduction", "Data Gathering", "Data Prep/EDA", "PCA", "Clustering", "Association Rule Mining", "Naïve Bayes", "Decision Tree", "Regression", "SVM", "Ensemble Learning", "Conclusions"])
 
     if sub_tab == "Introduction":
         st.subheader("Introduction")
         st.write("""
-Air quality has become one of the most pressing environmental challenges of the 21st century. Rapid urbanization, industrial growth, and a burgeoning global population have led to unprecedented levels of pollution, significantly affecting the air we breathe. Poor air quality is strongly linked to a variety of health problems, ranging from respiratory diseases such as asthma, chronic obstructive pulmonary disease (COPD), and bronchitis, to cardiovascular conditions and even premature death. The World Health Organization (WHO) reports that millions of premature deaths occur every year due to outdoor air pollution, emphasizing the critical impact it has on global public health. Beyond its impact on human health, deteriorating air quality has severe economic implications, such as rising healthcare costs, diminished workforce productivity, and loss of biodiversity, making it a focal issue for policymakers, public health advocates, and economic planners across the globe.        """)
-
-        st.write("""
-Among the major air pollutants of concern are particulate matter, particularly PM2.5 and PM10, which can penetrate deep into the lungs and even enter the bloodstream, leading to long-term health issues. Gaseous pollutants like carbon monoxide (CO), nitrogen dioxide (NO2), sulfur dioxide (SO2), and ozone (O3) also contribute substantially to air pollution's harmful effects, impacting human health, ecosystems, and climate stability. Long-term exposure to these pollutants can lead to severe chronic diseases and accelerate the effects of climate change. The interactions between pollutants, their sources, and environmental factors such as weather conditions make air pollution a complex challenge to tackle. This complexity necessitates the use of data-driven approaches to thoroughly understand and effectively mitigate the impacts of air pollution on society.        """)
-
-        st.write("""
-In this project, air quality data from key cities worldwide, including urban centers such as London, Delhi, Denver, and Beijing, are analyzed to understand patterns in air pollution from 2007 to 2024. These cities were chosen due to their diverse geographical, climatic, and economic conditions, allowing for a comprehensive comparative analysis of air pollution trends. For instance, London, a city with a significant industrial history and recent emphasis on green energy initiatives, highlights the challenges of combating pollution from urban traffic and industry. Meanwhile, Delhi, one of the most polluted cities globally, faces acute issues related to vehicular emissions, coal burning, and agricultural residue burning. The contrasting scenarios presented by these cities provide valuable perspectives on how different factors contribute to air pollution and offer potential pathways for intervention.        """)
-
-        st.write("""
-Beyond analyzing pollutant concentrations, this project applies advanced data analysis techniques, including Principal Component Analysis (PCA) and clustering algorithms, to reveal the underlying drivers and patterns of air pollution. PCA helps reduce the dimensionality of the data and simplifies complex relationships between pollutants, allowing for clearer insights into the principal factors contributing to air quality variations. Clustering techniques such as KMeans, hierarchical clustering, and DBSCAN are employed to identify natural groupings within the data, uncovering patterns related to geography, economic activity, and seasonal variations. These techniques offer a richer, data-driven perspective on how and why air pollution levels fluctuate across different regions and periods, enabling more effective targeting of mitigation strategies.
+        Air quality has emerged as one of the most significant environmental concerns of the 21st century, affecting every corner of the globe. The rapid pace of industrialization, urbanization, and population growth has drastically altered the atmosphere, leading to unprecedented levels of air pollution. The consequences are profound, as air pollution is a major contributor to various health issues, from respiratory diseases like asthma and bronchitis to cardiovascular conditions and even premature death. According to the World Health Organization (WHO), air pollution causes millions of premature deaths annually, cementing its position as a leading risk factor for global health. However, the impact of air pollution extends beyond health, influencing economic productivity, biodiversity, and climate systems, making it a pressing issue for nations worldwide.
         """)
+
         st.write("""
-The temporal dynamics of air quality are another critical focus of this project. Understanding how pollution levels change over time and in response to policy measures, economic shifts, and seasonal variations provides actionable insights for public health officials and policymakers. Seasonal spikes in pollution due to agricultural practices, year-round industrial emissions, and other factors are explored in depth. Additionally, the interactions and synergies between different pollutants are investigated, as certain combinations can exacerbate their harmful effects. By offering a holistic, data-driven analysis of air quality trends, this project aims to inform urban planning, environmental policy, and public health interventions aimed at reducing exposure to air pollution and mitigating its harmful effects on human health and the environment.
+        The primary pollutants of concern include particulate matter (PM2.5 and PM10), which pose severe health risks due to their ability to penetrate deep into the lungs and enter the bloodstream. Gaseous pollutants like nitrogen dioxide (NO2), sulfur dioxide (SO2), carbon monoxide (CO), and ozone (O3) significantly affect human health and ecosystems. Moreover, the complex interplay between pollutants and environmental factors, such as temperature, humidity, and wind patterns, makes understanding air quality a challenging task. This intricate network of influences requires a robust data-driven approach to untangle the factors that drive pollution levels and to propose effective mitigation strategies.
         """)
-        
+
+        st.write("""
+        The significance of air quality management becomes even more apparent in urban areas, where dense populations, vehicular emissions, and industrial activities exacerbate the problem. This project examines air quality data from diverse global cities, including London, Delhi, Denver, and Beijing, over a period of 17 years (2007–2024). These cities were selected for their contrasting geographic, economic, and demographic characteristics. For instance, London, a city with a legacy of industrialization and an ongoing focus on green energy, faces challenges with urban traffic emissions. On the other hand, Delhi, one of the most polluted cities in the world, battles with pollution from agricultural residue burning, coal combustion, and vehicular emissions. Such contrasts allow for a comprehensive understanding of how different factors influence air quality across regions.
+        """)
+
+        st.write("""
+        This project goes beyond descriptive analysis to employ advanced machine learning and statistical techniques for uncovering hidden patterns in the data. Principal Component Analysis (PCA) is used to identify the key drivers of air pollution by reducing the dimensionality of the data, simplifying complex relationships between pollutants. Clustering methods, such as KMeans and DBSCAN, are applied to group data based on similarities, revealing patterns related to seasonal variations, geographic differences, and economic activities. Additionally, machine learning models like Support Vector Machines (SVM) and XGBoost are leveraged to classify and predict air quality levels, providing actionable insights for decision-makers.
+        """)
+
+        st.write("""
+        One of the central focuses of this project is the temporal dynamics of air quality, analyzing how pollution levels change over time and in response to policy interventions, economic shifts, and environmental factors. For example, cities like Delhi experience seasonal spikes in pollution due to agricultural practices, while others, like Beijing, face year-round challenges related to industrial emissions. By exploring these temporal trends and interactions between pollutants, the project aims to provide a holistic perspective on air quality management. These insights can guide urban planning, public health strategies, and environmental policies to mitigate pollution and improve air quality. Ultimately, this project seeks to contribute to global efforts in combating air pollution, protecting public health, and promoting sustainable urban development.
+        """)
+                
         st.subheader("Motivation")
         st.write("""
-        The motivation for this project arises from the urgent need to better understand and address air pollution's significant impact on urban populations worldwide. With millions of premature deaths linked to air pollution annually, identifying the patterns and sources of pollution is essential for effective policymaking and mitigation strategies. This project aims to provide a detailed analysis of air quality data, shedding light on the main contributors to pollution and uncovering trends across various cities.
+        The motivation for this project stems from the pressing need to address the adverse effects of air pollution on urban populations globally. With millions of premature deaths linked to air pollution annually, it is critical to identify and understand the factors driving these alarming trends. Beyond its devastating health impacts, air pollution also disrupts ecosystems, accelerates climate change, and imposes significant economic costs on societies. This project endeavors to analyze air quality data to uncover the main contributors to pollution and to provide a comprehensive understanding of trends across diverse urban environments.
         """)
 
         st.write("""
-        By applying advanced data analysis techniques, we seek to generate actionable insights that can guide public health interventions, environmental policies, and sustainable urban development efforts. Understanding how factors such as population density, economic activities, and geographic characteristics influence pollution levels will enable more targeted and effective approaches to reduce air pollution and protect public health.
+        Through the use of advanced data analysis and machine learning techniques, this project aims to generate actionable insights that can inform public health strategies, guide environmental policymaking, and promote sustainable urban planning. By examining how variables like population density, industrial activities, traffic congestion, and seasonal factors affect air quality, this project seeks to offer targeted solutions for mitigating pollution. Ultimately, the goal is to contribute to global efforts in reducing pollution, improving air quality, and safeguarding human health and environmental integrity for future generations.
         """)
 
         st.subheader("Previous Works on Air Quality Prediction Using Machine Learning")
@@ -93,17 +97,17 @@ The temporal dynamics of air quality are another critical focus of this project.
         st.subheader("Questions This Analysis Hopes to Answer")
 
         st.write("""
-        1. What is the trend of air pollution across different seasons in major cities?
-        2. Are there specific pollutants that are consistently higher in one city compared to others?
-        3. How do meteorological factors such as humidity or wind speed influence air quality levels?
-        4. Is there a correlation between population density and higher pollutant levels?
+        1. What seasonal patterns exist in air pollution levels across major cities?
+        2. Are there specific pollutants that dominate certain regions, and what are their primary sources?
+        3. How do meteorological factors like humidity and wind speed influence air quality?
+        4. Is there a correlation between population density and higher pollutant levels in urban areas?
 
-        5. Which cities have the most significant air quality improvements or declines from 2007 to 2022?
-        6. How do policies implemented in cities such as London or Delhi affect air quality improvements?
-        7. What are the key health impacts linked to air pollution levels in cities with high PM2.5 and PM10?
-        8. Is there a correlation between traffic congestion and spikes in NO2 and CO levels in urban areas?
-        9. Can machine learning models predict future pollution levels based on past trends?
-        10. How do air quality trends differ between highly industrialized and less industrialized cities?
+        5. How have air quality levels changed over the years in cities like London and Delhi, and what factors contributed to these trends?
+        6. What role do policy interventions play in mitigating air pollution, and how effective have they been in different regions?
+        7. What are the key insights from clustering analysis regarding geographical and seasonal patterns of air pollution?
+        8. How accurately can machine learning models like SVM and XGBoost predict future pollution levels?
+        9. Which pollutants interact synergistically to create compounded health and environmental effects?
+        10. How do industrialized cities compare to less industrialized ones in terms of air quality trends and mitigation strategies?
         """)
 
         st.image("Images/poll.jpg", use_column_width=False)
@@ -1754,10 +1758,470 @@ Proper data preparation is essential for building effective regression models. S
        - Exploring feature engineering techniques or interaction terms may further enhance model performance.
        - Testing other classification models or ensemble techniques could address limitations in distinguishing overlapping class distributions.
 """)
+    elif sub_tab == "SVM":
+        st.subheader("SVM")
+        # Section 1: Overview of SVMs
+        st.write("""
+        #### Overview of SVMs
+        Support Vector Machines (SVMs) are a powerful and versatile supervised learning algorithm widely used for classification and regression tasks. 
+        SVMs work by finding the optimal hyperplane that separates classes in the feature space. This hyperplane is positioned to maximize the margin between 
+        the nearest data points of different classes, which are referred to as **support vectors**. The larger the margin, the better the model generalizes to unseen data.
+
+        SVMs can efficiently handle both linearly and non-linearly separable data through the use of kernel functions. These functions map the input features into higher-dimensional spaces, 
+        allowing for the separation of data that cannot be divided by a straight line in its original feature space.
+        """)
+
+        # Section 2: Why Are SVMs Linear Separators?
+        st.write("""
+        #### Why Are SVMs Linear Separators?
+        At their core, SVMs aim to find a linear decision boundary (hyperplane) in the transformed feature space. 
+        In linearly separable data, this boundary perfectly divides the classes. However, for non-linear data, kernel functions project the data into a higher-dimensional space 
+        where a linear separator can be found. This transformation allows SVMs to solve complex classification problems while maintaining their foundation as linear separators in the transformed space.
+
+        The optimization objective of SVMs is mathematically expressed as maximizing the margin while minimizing misclassification errors. This ensures the robustness and generalization capability of the model.
+        """)
+
+        # Section 3: The Role of Kernels and the Dot Product
+        st.write("""
+        #### The Role of Kernels and the Dot Product
+        ##### Kernels in SVM
+        Kernels are mathematical functions that transform the input data into a higher-dimensional space without explicitly computing the transformation. They allow SVMs to learn non-linear decision boundaries. Commonly used kernels include:
+        - **Linear Kernel**: Suitable for linearly separable data.
+        - **Polynomial Kernel**: Allows for polynomial decision boundaries by including interactions between features.
+        - **Radial Basis Function (RBF) Kernel**: Handles highly complex data patterns by mapping the data into infinite-dimensional space.
+
+        ##### The Dot Product in Kernels
+        The dot product is central to kernel operations. Instead of explicitly computing the coordinates of the transformed points in higher dimensions, kernels compute the dot product between points in the original space. This computation makes SVMs computationally efficient even for high-dimensional transformations.
+        """)
+
+        # Section 4: Examples of Polynomial and RBF Kernels
+        st.write("""
+        #### Examples of Polynomial and RBF Kernels
+        ##### Polynomial Kernel
+        The polynomial kernel can be expressed as:
+""")
+        st.image("Images/svm1.png", caption="Visualization of Polynomial Kernel Transformations", use_column_width=False)
+        st.write("""
+        - **Explanation**: This kernel maps the data into a higher-dimensional space, enabling the model to capture interactions between features. The degree \(d\) controls the complexity of the decision boundary.
+        - **Example**: For \(d = 2\) and \(r = 1\), the kernel projects the data into a quadratic feature space, which allows the model to capture polynomial relationships between features.""")
+        ### RBF Kernel
+        st.write("""
+        ##### RBF Kernel
+        The RBF kernel is expressed as:""")
+        st.image("Images/svm2.png", caption="Visualization of RBF Kernel Transformations", use_column_width=False)
+        st.write("""
+        - **Explanation**: The RBF kernel maps data into an infinite-dimensional space, creating decision boundaries that adapt to the data distribution. This makes it highly flexible and effective for non-linear problems.
+        - **Usage**: The parameter \(\gamma\) determines the influence of each data point. A higher \(\gamma\) value means closer data points are considered similar, while lower values make the model more generalized.
+        """)
+        # Section 5: Example of 2D Points Transformed Using a Polynomial Kernel
+        st.write("""
+        #### Example: 2D Points Transformed Using a Polynomial Kernel
+        Consider two 2D points: \(x_1 = [2, 3]\) and \(x_2 = [1, 4]\). Using a polynomial kernel with \(r=1\) and \(d=2\):
+
+        """)
+        # Display formula for the kernel
+        st.latex(r"K(x, x') = (1 + x \cdot x')^d")
+
+        st.write("""
+        #### Steps in Transformation
+        1. **Calculation of the dot product**:
+        The dot product of two points in a two-dimensional space is computed. For \( x_1 = [2, 3] \) and \( x_2 = [1, 4] \):
+        """)
+        # Display dot product calculation
+        st.latex(r"x_1 \cdot x_2 = (2 \cdot 1) + (3 \cdot 4) = 2 + 12 = 14")
+
+        st.write("""
+        2. **Application of the polynomial kernel**:
+        Using the computed dot product, the kernel formula is applied:
+        """)
+        # Display the kernel formula application
+        st.latex(r"K(x_1, x_2) = (1 + 14)^2 = 15^2 = 225")
+
+        st.write("""
+        #### Interpretation
+        The polynomial kernel maps the original two-dimensional points into a higher-dimensional space. This mapping allows the model to capture interactions between features and construct decision boundaries that account for polynomial relationships in the data. Such transformations are particularly effective when the data in the original space is not linearly separable.
+        """)
+
+        # Section 6: Visualizations
+        st.write("""
+        #### Visualizing SVMs and Kernels
+        """)
+        st.image("Images/svm3.png", caption="Illustration of SVM finding the optimal linear hyperplane.", use_column_width=True)
+        st.image("Images/svm4.png", caption="Kernel transformation: Mapping non-linear data to a higher-dimensional space.", use_column_width=True)
+
+        st.write("""
+        The first image shows how SVMs identify the optimal hyperplane by maximizing the margin between classes in linearly separable data. 
+        The second image demonstrates how kernels enable SVMs to classify non-linear data by transforming it into a higher-dimensional space where a linear separator can be applied.
+        """)
+
+        st.write("#### Data Preparation")
+    
+        st.write("""
+            Proper data preparation is essential for building effective Support Vector Machine (SVM) models. As a supervised learning algorithm, SVMs require labeled 
+    data, where each instance is associated with a known class or target variable. The preparation process involves cleaning the data, standardizing features 
+    (since SVMs are sensitive to scale), splitting the dataset into training and testing sets, and selecting an appropriate kernel function to capture the 
+    underlying patterns in the data. This ensures that the model can effectively separate classes using the optimal hyperplane in the feature space.
+        """)
+        
+        image_path_original = "Images/15.png" 
+        st.image(image_path_original, use_column_width=True, caption="Original Dataset")
+
+        st.write("""
+        - The dataset was transformed using `.pivot_table()` to reorganize pollutants as separate columns. This facilitated the analysis by clearly structuring pollutant values against unique locations and timestamps.
+        - Essential columns, including pollutant values (`pm25`, `pm10`, `no2`, `so2`, `o3`, `co`), were retained, and rows with missing data were removed to ensure data integrity.
+        - Columns such as `latitude` and `longitude` were excluded to streamline the dataset for pollutant-focused analysis.
+        - The dataframe index was reset to maintain a clean and sequential structure, simplifying subsequent data handling.
+    """)
+
+        st.image("Images/Naive4.png", caption="Dataset after Cleaning", use_column_width=True)
+
+        st.write("""
+        - Percentiles were calculated for `pm25` and `pm10` pollutants to divide the data into quantile-based categories. Specifically:
+            - The 33rd percentile (`pm25_33` and `pm10_33`) and the 66th percentile (`pm25_66` and `pm10_66`) values were computed.
+        - A function was defined to categorize air quality into three levels:
+            - **'Low'**: When both `pm25` and `pm10` values are below the 33rd percentile.
+            - **'Medium'**: When either `pm25` or `pm10` values fall between the 33rd and 66th percentiles.
+            - **'High'**: When `pm25` or `pm10` values exceed the 66th percentile.
+        - This categorization logic was applied to the dataset, resulting in a new target column, `air_quality_category`, which can serve as the classification label for modeling.
+        - The distribution of the newly created target variable was examined to ensure balanced classes for further analysis.
+    """)
+
+        st.image("Images/Naive5.png", caption="Target Variable Distribution", use_column_width=True)
+
+        st.write("""
+        #### Importance of Labeled Data in Supervised Learning
+
+        Supervised learning methods, including Support Vector Machines (SVMs), require **labeled data** to train models effectively. Labeled data refers to 
+        datasets where each instance is paired with a corresponding output or target variable, providing the necessary information for the algorithm to learn 
+        the relationships between inputs and outputs.
+
+        The labeled data allows the model to:
+        - Identify patterns in the input features corresponding to specific output classes or values.
+        - Evaluate its performance by comparing predictions to known targets, enabling the adjustment of parameters to minimize errors.
+        
+        Without labeled data, supervised methods cannot distinguish between classes or predict outcomes, as they rely entirely on this information to define 
+        decision boundaries or regression lines. Labeled data is the foundation for ensuring accurate training and generalization to unseen examples.
+    """)
+
+        st.write("""The dataset now looks like this:""")
+        st.image("Images/Naive6.png", caption="Prepared Dataset", use_column_width=True)
+
+        st.write("""Features:""")
+        st.image("Images/Naive7.png", caption="Prepared Dataset", use_column_width=True)
+
+        st.write("""Target Variable:""")
+        st.image("Images/Naive8.png", caption="Prepared Dataset", use_column_width=True)
+
+        st.write("""
+    - The target variable, `air_quality_category`, was transformed using label encoding to convert categorical values into numerical format for model compatibility.
+    - **Features and Target**: 
+        - **Features**: The predictor variables consist of pollutant levels (`pm25`, `pm10`, `no2`, `so2`, `o3`, `co`).
+        - **Target**: The encoded air quality category, `air_quality_category_encoded`.
+    - **Data Splitting**: 
+        - The data was divided into training and testing subsets using an 80-20 split ratio.
+        - **80% Training Set**: Used to train the models, capturing patterns and relationships within the data.
+        - **20% Testing Set**: Reserved for evaluating the model's performance on unseen data to ensure unbiased assessment and prevent overfitting.
+""")
+
+        st.image("Images/Naive9.png", caption="Dimensions of Training and Testing Datasets", use_column_width=True)
+        st.image("Images/Naive10.png", caption="X_train Dataset", use_column_width=True)
+        st.image("Images/Naive11.png", caption="X_test Dataset", use_column_width=True)
+        st.image("Images/Naive12.png", caption="y_train Dataset", use_column_width=True)
+        st.image("Images/Naive13.png", caption="y_test Dataset", use_column_width=True)
+
+        st.write("#### Importance of Creating a Disjoint Split")
+
+        st.write("""
+        ##### Prevention of Overfitting
+        Models trained on data learn specific patterns and relationships from the training dataset. If the same data is used for both training and evaluation, performance metrics can appear artificially inflated due to the model's prior exposure to the data. This situation, referred to as **data leakage**, results in overfitting, where the model may perform exceptionally well on known data but exhibit poor generalization on unseen data. A disjoint split ensures that evaluation occurs on data that has not been seen during training, thus providing an unbiased assessment of model performance and reducing overfitting risk.
+
+        ##### Assessment of Generalization Capability
+        Machine learning models must generalize effectively to new and previously unseen data. Using a disjoint test set simulates real-world scenarios where models are deployed to predict or classify novel inputs. For the air quality dataset, this approach enables a robust evaluation of the model's predictive ability on new pollutant measurements, including `pm25`, `pm10`, and other features.
+
+        ##### Validation of Model Robustness
+        When models are trained and evaluated on overlapping data, there is a risk that unique characteristics or outliers in the training data may be memorized. This behavior compromises the model's robustness and reliability. Ensuring a disjoint split allows the test set to serve as an unbiased benchmark for evaluating the model's predictions, confirming that predictions are driven by learned patterns rather than noise or specific training artifacts.
+        """)
+
+        st.write("""
+        #### Data Requirements for Support Vector Machines (SVMs)
+
+        **Support Vector Machines (SVMs)** can only operate on **labeled numeric data** due to their mathematical foundation. The algorithm relies on calculating 
+        the dot product and distances between data points, which require numeric representations. Here's why this limitation exists:
+
+        1. **Mathematical Operations**:
+        - SVMs use linear algebra to compute hyperplanes, margins, and kernel transformations. These operations cannot be performed on categorical or textual 
+            data without first converting them into numerical form (e.g., using one-hot encoding or embedding techniques).
+
+        2. **Kernel Functions**:
+        - Kernels like the polynomial or radial basis function (RBF) compute similarities between data points. These calculations rely on numeric inputs to 
+            determine the separation between classes in the feature space.
+
+        3. **Predictive Accuracy**:
+        - SVMs are sensitive to the scale and nature of the input features. Numeric data ensures that distances and margins are accurately represented, 
+            enhancing the model's ability to generalize.
+
+        **Conclusion**:
+        For non-numeric or categorical data, preprocessing steps such as encoding or transformation are necessary before applying SVMs. This ensures that the 
+        algorithm can effectively learn from and predict based on the input data.
+    """)
+
+        # Link to code and data
+        st.markdown("#### Code and Data")
+        st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/SVM.ipynb)")
+        st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)")
+
+        st.write("#### Results")
+        st.image("Images/svm5.png", caption="ROC Curve for SVM with Linear Kernel (C=0.1)", use_column_width=True)
+
+        st.image("Images/svm6.png", caption="Confusion Matrix and Classification Report for SVM (Kernel=linear, C=0.1)", use_column_width=True)
+
+        st.image("Images/svm7.png", caption="ROC Curve for SVM with Linear Kernel (C=1)", use_column_width=True)
+
+        st.image("Images/svm8.png", caption="Confusion Matrix and Classification Report for SVM (Kernel=linear, C=1)", use_column_width=True)
+
+        st.image("Images/svm9.png", caption="ROC Curve for SVM with Linear Kernel (C=10)", use_column_width=True)
+
+        st.image("Images/svm10.png", caption="Confusion Matrix and Classification Report for SVM (Kernel=linear, C=10)", use_column_width=True)
+
+        st.image("Images/svm11.png", caption="ROC Curve for SVM with rbf Kernel (C=0.1)", use_column_width=True)
+
+        st.image("Images/svm12.png", caption="Confusion Matrix and Classification Report for SVM (Kernel=rbf, C=0.1)", use_column_width=True)
+
+        st.image("Images/svm13.png", caption="ROC Curve for SVM with rbf Kernel (C=1)", use_column_width=True)
+
+        st.image("Images/svm14.png", caption="Confusion Matrix and Classification Report for SVM (Kernel=rbf, C=1)", use_column_width=True)
+
+        st.image("Images/svm15.png", caption="ROC Curve for SVM with rbf Kernel (C=10)", use_column_width=True)
+
+        st.image("Images/svm16.png", caption="Confusion Matrix and Classification Report for SVM (Kernel=rbf, C=10)", use_column_width=True)
+
+        st.image("Images/svm17.png", caption="ROC Curve for SVM with poly Kernel (C=0.1)", use_column_width=True)
+
+        st.image("Images/svm18.png", caption="Confusion Matrix and Classification Report for SVM (Kernel=poly, C=0.1)", use_column_width=True)
+
+        st.image("Images/svm19.png", caption="ROC Curve for SVM with poly Kernel (C=1)", use_column_width=True)
+
+        st.image("Images/svm20.png", caption="Confusion Matrix and Classification Report for SVM (Kernel=poly, C=1)", use_column_width=True)
+
+        st.image("Images/svm21.png", caption="ROC Curve for SVM with poly Kernel (C=10)", use_column_width=True)
+
+        st.image("Images/svm22.png", caption="Confusion Matrix and Classification Report for SVM (Kernel=poly, C=10)", use_column_width=True)
+
+        st.image(
+        "Images/svm23.png", 
+        caption="Comparison of SVM Models by Kernel and C Values.",
+        use_column_width=True
+        )
+
+        # Writing the description
+        st.write("""
+        #### Analysis of Results
+        This bar plot illustrates the accuracy achieved by SVM models using different kernels (linear, RBF, polynomial) and varying regularization parameters (C values). 
+
+        - **RBF Kernel**: The RBF kernel consistently outperforms the others, achieving the highest accuracy across multiple C values. Its ability to model complex, non-linear relationships makes it highly effective.
+        - **Polynomial Kernel**: The polynomial kernel also performs well, capturing interactions between features, but its performance is slightly lower than the RBF kernel in this case.
+        - **Linear Kernel**: The linear kernel exhibits slightly lower accuracy, indicating its limitations in handling non-linear data. However, it remains a robust choice for linearly separable datasets.
+
+        The value of **C = 10.0** consistently yields the best accuracy for all kernels. This indicates that a higher regularization parameter allows the model to focus more on correctly classifying training data, although it may slightly increase the risk of overfitting. The choice of C should always balance accuracy with generalization to unseen data.
+        """)
+
+        st.write("""
+        #### Conclusion: Support Vector Machines (SVM) Analysis
+
+        ##### Key Learnings
+        The application of Support Vector Machines (SVMs) in this project demonstrated their effectiveness in classifying air quality data into distinct categories. Through experimentation with different kernel functions (linear, polynomial, and RBF) and regularization parameters (C), the SVM models highlighted their ability to capture complex relationships in the data. Non-linear kernels, particularly the RBF kernel, excelled in modeling intricate patterns, showcasing their versatility in handling real-world environmental datasets.
+
+        The findings emphasized that tuning hyperparameters like the regularization parameter (C) significantly impacts model performance. For instance, smaller values of C allowed for a wider margin at the cost of minor misclassifications, while larger values focused on minimizing classification errors, albeit with tighter decision boundaries.
+
+        ##### Real-World Implications
+        The insights gained from this analysis have several practical applications:
+        - **Environmental Policy Planning**: SVM models can predict periods of poor air quality, allowing policymakers to take proactive measures like issuing alerts or restricting pollution-heavy activities.
+        - **Public Health Initiatives**: Health agencies can use these predictions to prepare for spikes in air pollution and address health risks for vulnerable populations.
+        - **Urban Development**: Urban planners can identify pollution hotspots and design interventions such as green spaces or better traffic management systems to reduce emissions.
+
+        ##### Observations on Kernels and Parameters
+        - The **RBF kernel** emerged as the most effective for this dataset, delivering high accuracy and adaptability by capturing non-linear relationships.
+        - The **linear kernel** performed well but struggled to handle non-linear separations, indicating its limitations in more complex datasets.
+        - The **polynomial kernel** offered an intermediate solution, capturing interactions between features but requiring careful parameter tuning.
+
+        When comparing results across different values of C:
+        - Lower values of **C** (e.g., 0.1) provided robust generalization but at the cost of slightly reduced accuracy.
+        - Higher values of **C** (e.g., 10.0) minimized misclassification errors but risked overfitting by creating tighter decision boundaries.
+        - The optimal trade-off for this dataset was achieved with **C = 1.0**, balancing generalization and classification accuracy effectively.
+
+        ##### Future Considerations
+        While SVMs proved effective, future efforts could explore:
+        - **Feature Engineering**: Adding external features such as weather data or population density to enhance predictions.
+        - **Ensemble Methods**: Combining SVMs with other models like Random Forests or Gradient Boosting to improve classification performance.
+        - **Scalability**: Optimizing SVMs for larger datasets by leveraging distributed computing or exploring approximate SVM methods.
+
+        ##### Final Thoughts
+        Support Vector Machines, with their robust mathematical foundation and adaptability, provided valuable insights into air quality classification in this project. The models successfully highlighted how advanced machine learning techniques can address complex environmental challenges, paving the way for data-driven strategies to improve urban air quality and public health.
+        """)
+
+    elif sub_tab == "Ensemble Learning":
+        st.subheader("Ensemble Learning")
+        st.write("#### Overview")
+        st.write("""
+        Ensemble Learning combines multiple base models (weak learners) to produce a stronger, more accurate predictive model. By aggregating diverse predictions, ensemble methods minimize individual model weaknesses while enhancing overall performance. Below, we discuss popular ensemble techniques:
+        """)
+
+        # Random Forest
+        st.write("##### Random Forest")
+        st.write("""
+        **Random Forest** is an ensemble method based on Bagging (Bootstrap Aggregating). It builds multiple decision trees on random subsets of the dataset and combines their predictions through majority voting (classification) or averaging (regression). By introducing randomness at both the data and feature selection levels, Random Forest reduces overfitting and increases model generalizability.
+        """)
+        st.write("**Applications:**")
+        st.write("- Classification tasks (e.g., disease prediction, fraud detection).")
+        st.write("- Regression tasks (e.g., house price estimation).")
+
+        # XGBoost
+        st.write("##### XGBoost")
+        st.write("""
+        **XGBoost (Extreme Gradient Boosting)** builds sequential decision trees where each tree attempts to correct the errors of the previous one. This boosting method incorporates L1 and L2 regularization, handles missing data, and supports parallel processing, making it both powerful and efficient.
+        """)
+        st.write("**Applications:**")
+        st.write("- High-performance competitions (e.g., Kaggle, Hackathons).")
+        st.write("- Tabular datasets requiring accurate predictions (e.g., financial modeling, healthcare).")
+
+        # AdaBoost
+        st.write("##### AdaBoost")
+        st.write("""
+        **AdaBoost (Adaptive Boosting)** sequentially builds weak learners, such as decision trees, by assigning weights to misclassified data points. Subsequent models focus on these weighted samples to correct errors, and final predictions are based on a weighted vote of all weak learners.
+        """)
+        st.write("**Applications:**")
+        st.write("- Binary and multi-class classification (e.g., face detection).")
+        st.write("- Improving model performance on imbalanced datasets.")
+
+        # Bagging
+        st.write("##### Bagging")
+        st.write("""
+        **Bagging (Bootstrap Aggregating)** creates multiple models by training them on random subsets of the training data (with replacement). Final predictions are aggregated through majority voting (classification) or averaging (regression). Bagging reduces variance and prevents overfitting.
+        """)
+        st.write("**Applications:**")
+        st.write("- Reducing overfitting in unstable models like Decision Trees.")
+        st.write("- Building robust regression models.")
+
+        # Stacking
+        st.write("##### Stacking")
+        st.write("""
+        **Stacking** combines predictions from multiple base learners using a meta-learner (e.g., Logistic Regression) to make final predictions. Unlike Bagging and Boosting, Stacking leverages the diversity of different model types (e.g., SVMs, DTs, Neural Networks) to improve performance.
+        """)
+        st.write("**Applications:**")
+        st.write("- Enhancing predictive performance in competitions.")
+        st.write("- Scenarios requiring diverse model contributions.")
+
+        # Voting
+        st.write("##### Voting")
+        st.write("""
+        **Voting** combines predictions from multiple models (classifiers or regressors) by taking the majority vote for classification or averaging for regression. Voting can be:
+        - **Hard Voting**: Majority class wins.
+        - **Soft Voting**: Weighted probabilities are used.
+        """)
+        st.write("**Applications:**")
+        st.write("- Scenarios with diverse models requiring simple integration.")
+        st.write("- Situations where individual model accuracies vary significantly.")
+
+        # Combining SVMs and Decision Trees
+        st.write("##### Combining SVMs and Decision Trees")
+        st.write("""
+        Combining Support Vector Machines (SVMs) and Decision Trees involves using one algorithm to complement the strengths of the other:
+        - **SVM with DT features**: SVMs can work on the features generated by Decision Trees to refine decision boundaries.
+        - **DT with SVM outputs**: Decision Trees can use SVM outputs as additional features to improve interpretability.
+        """)
+        st.write("**Applications:**")
+        st.write("- Hybrid approaches in complex datasets.")
+        st.write("- Scenarios where feature engineering benefits from both linear and tree-based techniques.")
+
+        # Visual Representation
+        st.write("#### Visual Representation of Ensemble Techniques")
+        st.image("Images/xg1.png", caption="Random Forest: Combining multiple decision trees for classification or regression.", use_column_width=True)
+        st.image("Images/xg2.jpg", caption="A Comparative Illustration of Boosting and Bagging Techniques", use_column_width=True)
+
+        # Summary
+        st.write("#### Summary")
+        st.write("""
+        Ensemble methods, whether through Bagging, Boosting, or other techniques, significantly enhance the robustness and predictive power of machine learning models. Each method offers unique strengths:
+        - Bagging (e.g., Random Forest) excels at reducing variance.
+        - Boosting (e.g., XGBoost, AdaBoost) focuses on minimizing bias.
+        - Stacking and Voting leverage diverse model outputs for superior performance.
+
+        By selecting an appropriate ensemble method, practitioners can address challenges in various datasets, ranging from overfitting to capturing complex patterns in data.
+        """)
+        st.write("""
+        For this project, **XGBoost** was selected as the primary ensemble learning technique due to its efficiency and accuracy on tabular datasets. 
+        Its ability to handle missing data, incorporate regularization, and efficiently process large datasets makes it an excellent choice for analyzing air quality data. 
+        XGBoost's robust performance in competitions and real-world applications aligns well with the project's goal of uncovering meaningful insights and trends in global air quality patterns.
+        """)
+        
+        st.write("#### Data Preparation")
+        st.write("The data was originally prepared for the SVM model and has been seamlessly reused for training and evaluating the XGBoost model, ensuring consistency in preprocessing and enabling a direct performance comparison between the two algorithms.")
+
+        # Link to code and data
+        st.markdown("#### Code and Data")
+        st.markdown("[Code](https://github.com/starlord-31/Global-Air-Quality-Analysis/blob/main/Ensemble%20Learning.ipynb)")
+        st.markdown("[Data](https://drive.google.com/drive/folders/1yNMIIAGMYQi_tx_nimV0yBb09Kpmt66K?usp=drive_link)")
+
+        st.write("#### Results")
+        st.image("Images/xg3.png", caption="XGBoost Confusion Matrix with Best Parameters", use_column_width=True)
+
+        # Write the explanation for the results
+        st.write("""
+        1. **Accuracy**:
+        - The XGBoost model achieved an exceptional accuracy of **99.71%**, showcasing its ability to handle the dataset effectively. This level of performance suggests that the model is highly reliable in predicting air quality categories.
+
+        2. **Confusion Matrix**:
+        - The confusion matrix illustrates the distribution of correct and incorrect predictions for each class.
+            - **Class 0 (Low Pollution)**: Out of 3204 instances, the model correctly predicted 3195, with only 9 misclassifications.
+            - **Class 1 (Medium Pollution)**: Out of 2823 instances, the model predicted 2815 correctly, with 8 misclassifications.
+            - **Class 2 (High Pollution)**: Out of 5841 instances, 5824 were correctly classified, with 17 misclassifications (11 as Class 0 and 6 as Class 1).
+
+        3. **Classification Report**:
+        - The precision, recall, and F1-scores for all classes are close to **1.00**, indicating nearly perfect performance across all metrics:
+            - **Precision**: The model has an excellent ability to avoid false positives.
+            - **Recall**: The model reliably identifies all instances of each class.
+            - **F1-Score**: The harmonic mean of precision and recall reflects balanced performance across all classes.
+
+        4. **Interpretation**:
+        - The high accuracy and near-perfect classification metrics suggest that XGBoost is well-suited for this dataset. Its ability to minimize misclassifications demonstrates its strength in handling complex relationships between features and classes.
+
+        5. **Comparison with SVM**:
+        - When compared to SVM, XGBoost shows a significant improvement in both accuracy and classification metrics. This highlights the efficacy of ensemble-based boosting methods in capturing intricate patterns in the data.
+        """)
 
     elif sub_tab == "Conclusions":
         st.subheader("Conclusions")
-        st.write("This section concludes the Machine Learning topics discussed.")
+        st.write("""
+Air pollution remains one of the most critical environmental and public health challenges, impacting millions of lives globally. Through this comprehensive project, valuable insights have been gathered regarding the key factors driving air pollution, its impact on health and the environment, and actionable strategies for mitigation. This analysis serves as a powerful reminder of the importance of addressing pollution not just as an environmental issue but as a multidimensional crisis with far-reaching consequences on health, climate, and society.
+""")
+
+        st.image("Images/pm.jpg", caption="Global PM2.5 Trends: Regional changes in air pollution from 1998 to 2011 (top) and 2011 to 2019 (bottom), highlighting significant improvements in some areas and persistent challenges in others", use_column_width=True)
+
+        st.write("""
+        A key finding from this project is the significant disparity in air quality across different cities and regions. In urban centers like Delhi, severe levels of PM2.5 and PM10 are primarily driven by industrial activity, vehicular emissions, and agricultural residue burning. This highlights the urgent need for targeted policies and stricter enforcement to curb these sources of pollution. On the other hand, cities like London have seen improvements in air quality due to sustained efforts in transitioning to clean energy and reducing emissions from urban traffic. This contrast demonstrates the effectiveness of localized solutions tailored to a city’s specific challenges and economic conditions.
+        """)
+
+        st.write("""
+        The role of meteorological factors in influencing pollution levels was another critical insight. Seasonal variations, such as winter pollution spikes caused by heating activities and atmospheric conditions that trap pollutants closer to the ground, emphasize the interplay between human activities and environmental factors. This underscores the importance of integrating weather and climate considerations into urban planning and pollution mitigation strategies. Policies need to account for these dynamics to achieve sustained improvements in air quality throughout the year.
+        """)
+
+        st.image("Images/schematic.png", caption="Interconnected Impact of Air Quality and Climate Change: Socioeconomic scenarios, emission trends, atmospheric chemistry, and their cascading effects on human health, ecosystems, and policymaking decisions", use_column_width=True)
+
+        st.write("""
+        The project also highlighted the health implications of different pollutants. Particulate matter like PM2.5 poses the highest risk due to its ability to penetrate deep into the respiratory system and bloodstream, leading to severe long-term health conditions such as cardiovascular and respiratory diseases. Nitrogen dioxide (NO2), another major pollutant, exacerbates these risks, particularly in densely populated urban areas. These findings stress the need for public health campaigns to raise awareness about the dangers of air pollution and promote behavioral changes, such as using public transportation and adopting cleaner energy solutions.
+        """)
+
+        st.write("""
+        Machine learning techniques played a pivotal role in uncovering hidden patterns in the data. Clustering algorithms helped identify groups of cities with similar pollution trends, providing valuable insights into shared challenges and potential collaborative solutions. Principal Component Analysis (PCA) reduced the dimensionality of the data, making it easier to focus on the most influential factors driving air quality variations. Additionally, predictive models like XGBoost proved effective in forecasting pollution levels, offering a practical tool for policymakers to anticipate and address pollution spikes proactively.
+        """)
+
+        st.write("""
+        Furthermore, the project demonstrated the effectiveness of policies aimed at reducing pollution. Regions that implemented stringent emission standards, promoted renewable energy, and invested in public transportation saw measurable improvements in air quality. These findings illustrate the importance of a multi-pronged approach that combines regulatory, technological, and behavioral solutions. International cooperation and knowledge-sharing are also essential, as air pollution often transcends national borders, impacting neighboring regions and even global climate systems.
+        """)
+
+        st.write("""
+        In conclusion, this project underscores the interconnected nature of air pollution with health, economic, and environmental factors. It highlights the urgency of coordinated action and the power of data-driven strategies in addressing this global challenge. The insights generated from this analysis can guide future research, policy development, and urban planning to create cleaner, healthier, and more sustainable cities. The findings serve as a call to action for governments, industries, and individuals to collaborate in combating air pollution and safeguarding the planet for future generations.
+        """)
 
 # Social Links Section (LinkedIn and GitHub)
 st.write("### Connect with me:")
